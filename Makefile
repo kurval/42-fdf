@@ -4,9 +4,13 @@ SOURCES = main.c
 
 OBJECTS = $(subst .c,.o,$(SOURCES))
 
+LIBFT = libft/libft.a
+
+HEADERS = fdf.h
+
 FLAGS = -Wall -Wextra #-Werror
-LINKS =  -I libft -L libft \
-	-L /usr/local/lib -lmlx -I /usr/local/X11/include \
+
+LINKS = -L /usr/local/lib -lmlx -I /usr/local/X11/include \
 	-L /usr/X11/lib -lX11 -lXext -framework OpenGL -framework Appkit
 
 GREEN = \033[1;32m
@@ -16,6 +20,9 @@ EOC = \033[1;0m
 
 all: $(NAME)
 
+%.o:%.c
+	@gcc $(FLAGS) -I $(HEADERS) -o $@ -c $<
+
 $(LIBFT):
 	@echo "$(WHT)Compiling libft...$(EOC)"
 	@make -C libft
@@ -23,7 +30,7 @@ $(LIBFT):
 
 $(NAME): $(OBJECTS) $(LIBFT)
 	@echo "$(WHT)Compiling FDF...$(EOC)"
-	@gcc $(SOURCES) -o $(NAME) $(FLAGS) $(LINKS)
+	@gcc -o $(NAME) $(LINKS) $(OBJECTS) $(LIBFT)
 	@echo "$(GREEN)Lem-in build completed.$(EOC)"
 
 clean:
