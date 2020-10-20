@@ -1,6 +1,7 @@
 NAME = fdf
 
-SOURCES = main.c
+SOURCES = ./sources/main.c ./sources/read_input.c ./sources/initialize.c \
+./sources/errors.c
 
 OBJECTS = $(subst .c,.o,$(SOURCES))
 
@@ -31,7 +32,7 @@ $(LIBFT):
 $(NAME): $(OBJECTS) $(LIBFT)
 	@echo "$(WHT)Compiling FDF...$(EOC)"
 	@gcc -o $(NAME) $(LINKS) $(OBJECTS) $(LIBFT)
-	@echo "$(GREEN)Lem-in build completed.$(EOC)"
+	@echo "$(GREEN)Fdf build completed.$(EOC)"
 
 clean:
 	@echo "$(WHT)Removing o-files...$(EOC)"
