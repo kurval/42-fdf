@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/20 17:18:53 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/20 17:24:19 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ static void	print_points(t_map *map_info)
 	int x;
 
 	i = 0;
-	while (i < map_info->height)
+	while (map_info->pixels[i])
 	{	
 		x = 0;
-		while (x < 10)
+		while (map_info->pixels[i][x])
 		{
 			ft_printf("%d ", map_info->pixels[i][x]->z);
 			x++;
@@ -33,7 +33,6 @@ static void	print_points(t_map *map_info)
 	}
 }
 */
-
 static void	check_width(t_map *map_info, char **values, int y)
 {
 	int	x;
