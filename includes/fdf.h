@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/20 15:47:57 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/21 11:41:28 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int     main(int args, char **argv);
 void    read_input(int args, char **argv, t_map *map_info);
 void    init_map_info(t_map *info);
 void    print_error(char *error_msg);
+void    free_map(t_map *map_info);
 
 #endif

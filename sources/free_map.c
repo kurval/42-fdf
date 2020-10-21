@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 12:10:30 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/21 11:50:09 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/10/21 11:37:51 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/10/21 11:48:00 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-int main(int args, char **argv)
+void    free_map(t_map *map_info)
 {
-    t_map   map_info;
+    int i;
+	int x;
 
-    init_map_info(&map_info);
-    read_input(args, argv, &map_info);
-
-    /*
-    ** This is for testing window
-    void *mlx = mlx_init();
-    void *win = mlx_new_window(mlx, 640, 360, "Tutorial Window");
-    mlx_loop(mlx);
-    */
-    free_map(&map_info);
-    return (0);
+	i = 0;
+	while (map_info->pixels[i])
+	{	
+		x = 0;
+		while (map_info->pixels[i][x])
+        {
+			free(map_info->pixels[i][x]);
+			x++;
+		}
+        free(map_info->pixels[i]);
+		i++;
+	}
+    free(map_info->pixels);
 }
