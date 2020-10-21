@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/21 11:41:28 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/21 13:33:31 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct		s_pixel
 	int				x;
 	int				y;
 	int				z;
+	int				color;
 }					t_pixel;
 
 typedef struct		s_map
@@ -30,6 +31,8 @@ typedef struct		s_map
 	t_pixel         ***pixels;
     int             height;
     int             width;
+	void			*mlx_ptr;
+	void			*win_ptr;
 }					t_map;
 
 int     main(int args, char **argv);
