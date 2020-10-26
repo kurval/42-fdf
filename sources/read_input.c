@@ -6,13 +6,12 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/21 12:36:18 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/26 14:45:37 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
-
 
 static void	print_points(t_map *map_info)
 {
