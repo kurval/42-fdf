@@ -41,6 +41,8 @@ typedef struct		s_pixel
 	int				y;
 	int				z;
 	int				color;
+	int				dx;
+	int				dy;
 }					t_pixel;
 
 typedef struct		s_map
