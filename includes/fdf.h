@@ -20,7 +20,20 @@
 
 # define WIDTH	1920
 # define HEIGHT	1080
+
+/*
+**	KEYS
+*/
+
 # define ESC	65307
+
+/*
+**	COLORS
+*/
+
+# define WHITE 	16777215
+# define RED	16711680
+# define LIME	65280
 
 typedef struct		s_pixel
 {
@@ -45,5 +58,7 @@ void    init_map_info(t_map *info);
 void    print_error(char *error_msg);
 void    free_map(t_map *map_info);
 int		press_key(int keycode, t_map *info);
+void    draw_line(t_map *map_info, int x0, int y0, int x1, int y1, int color);
+int		expose_hook(t_map *map_info);
 
 #endif

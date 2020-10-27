@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/26 14:45:37 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/27 10:15:01 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	print_points(t_map *map_info)
 	}
 }
 
-static void	check_width(t_map *map_info, char **values)
+static int	check_width(t_map *map_info, char **values)
 {
 	int	x;
 
@@ -41,16 +41,19 @@ static void	check_width(t_map *map_info, char **values)
 		x++;
 	if (x == 0)
 		print_error(MAP_ERROR);
-	map_info->width = x;
+	if (map_info->width < x)
+		map_info->width = x;
+	return (x);
 }
 
 static void	store_values(char **values, t_map *map_info, int py)
 {
 	int px;
+	int	width;
 
 	px = 0;
-	check_width(map_info, values);
-	if (!(map_info->pixels[py] = (t_pixel **)malloc(sizeof(t_pixel *) * map_info->width + 1)))
+	width = check_width(map_info, values);
+	if (!(map_info->pixels[py] = (t_pixel **)malloc(sizeof(t_pixel *) * width + 1)))
 		print_error(MALLOC_ERROR);
 	while (values[px] != NULL)
 	{
