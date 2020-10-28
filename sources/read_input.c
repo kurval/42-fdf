@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/27 10:15:01 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/28 20:47:53 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	print_points(t_map *map_info)
 		x = 0;
 		while (map_info->pixels[i][x])
 		{
-			ft_printf("%d ", map_info->pixels[i][x]->z);
+			ft_printf("%d ", map_info->pixels[i][x]->pz);
 			x++;
 		}
 		i++;
@@ -46,29 +46,29 @@ static int	check_width(t_map *map_info, char **values)
 	return (x);
 }
 
-static void	store_values(char **values, t_map *map_info, int py)
+static void	store_values(char **values, t_map *map_info, int y)
 {
-	int px;
+	int x;
 	int	width;
 
-	px = 0;
+	x = 0;
 	width = check_width(map_info, values);
-	if (!(map_info->pixels[py] = (t_pixel **)malloc(sizeof(t_pixel *) * width + 1)))
+	if (!(map_info->pixels[y] = (t_pixel **)malloc(sizeof(t_pixel *) * width + 1)))
 		print_error(MALLOC_ERROR);
-	while (values[px] != NULL)
+	while (values[x] != NULL)
 	{
-		if (!(map_info->pixels[py][px] = (t_pixel *)malloc(sizeof(t_pixel))))
+		if (!(map_info->pixels[y][x] = (t_pixel *)malloc(sizeof(t_pixel))))
 			print_error(MALLOC_ERROR);
-		map_info->pixels[py][px]->y = py;
-		map_info->pixels[py][px]->x = px;
-		if (!(ft_atoi_err(values[px])))
+		map_info->pixels[y][x]->py = y;
+		map_info->pixels[y][x]->px = x;
+		if (!(ft_atoi_err(values[x])))
 			print_error(MAP_ERROR);
-		map_info->pixels[py][px]->z = ft_atoi(values[px]);
-		free(values[px]);
-		px++;
+		map_info->pixels[y][x]->pz = ft_atoi(values[x]);
+		free(values[x]);
+		x++;
 	}
 	free(values);
-	map_info->pixels[py][px] = NULL;
+	map_info->pixels[y][x] = NULL;
 }
 
 static void	save_lines(int fd, t_map *map_info, char *file1)

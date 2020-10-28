@@ -6,7 +6,7 @@
 #    By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 09:34:51 by vkurkela          #+#    #+#              #
-#    Updated: 2020/04/10 19:43:38 by vkurkela         ###   ########.fr        #
+#    Updated: 2020/10/28 20:35:48 by vkurkela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = ft_isprint.c ft_memmove.c ft_putstr.c ft_strdup.c ft_strmapi.c ft_strsplit
 		ft_putstrb.c ft_atoi_base.c ft_iswhitespace.c ft_putnbru.c ft_itoa_baseb.c \
 		ft_numlenu.c ft_itoa_baseul.c ft_strsub_b.c ft_put_zeros.c ft_put_spaces.c ft_put_plus.c \
 		ft_ftoa.c ft_put_space.c ft_putcharb.c ft_strncmp_end.c get_next_line.c ft_atoi_err.c \
-		ft_tab_size.c
+		ft_tab_size.c ft_abs.c
 
 HEADERS = libft.h
 

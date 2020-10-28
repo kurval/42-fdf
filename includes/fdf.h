@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/26 18:03:09 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/28 20:43:14 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,17 @@
 # define RED	16711680
 # define LIME	65280
 
+# define ICR_X	1
+# define ICR_Y	2
+
 typedef struct		s_pixel
 {
-	int				x;
-	int				y;
-	int				z;
+	int				px;
+	int				py;
+	int				pz;
 	int				color;
-	int				dx;
-	int				dy;
+	int				ix;
+	int				iy;
 }					t_pixel;
 
 typedef struct		s_map
@@ -52,6 +55,13 @@ typedef struct		s_map
     int             width;
 	void			*mlx;
 	void			*win;
+	int				dx;
+	int				dy;
+	int				sx;
+	int				sy;
+	int				x0;
+	int				y0;
+	int				err;
 }					t_map;
 
 int     main(int args, char **argv);
@@ -60,7 +70,9 @@ void    init_map_info(t_map *info);
 void    print_error(char *error_msg);
 void    free_map(t_map *map_info);
 int		press_key(int keycode, t_map *info);
-void    draw_line(t_map *map_info, int x0, int y0, int x1, int y1, int color);
+void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end, int incr);
 int		expose_hook(t_map *map_info);
+void    draw_map(t_map *map_info);
+void	conic(t_map *map_info);
 
 #endif

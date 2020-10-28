@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkurkela <vkurkela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:34:35 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/02/28 15:42:08 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/28 20:36:18 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,5 @@ int					ft_printf(const char *format, ...);
 int					get_next_line(const int fd, char **line);
 int					ft_atoi_err(const char *str);
 int					ft_tab_size(char **tab);
+int					ft_abs(int x);
 #endif
