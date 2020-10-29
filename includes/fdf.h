@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 14:05:39 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 14:09:52 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@
 # define BEG_X		map_info->beg_x
 # define BEG_Y		map_info->beg_y
 
-# define ICR_X		1
-# define ICR_Y		0
+# define AX_X		1
+# define AX_Y		0
 
 /*
 **	CONTROLS

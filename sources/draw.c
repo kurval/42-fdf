@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 14:06:02 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 14:10:54 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 		X = start->ix + SX;
 		Y = start->iy;
 		ERR = 2 * DY - DX;
-		return (1);
+		return (AX_X);
 	}
 	else
 	{
@@ -35,17 +35,17 @@ static int	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 		X = start->iy + SX;
 		Y = start->ix;
 		ERR = 2 * DX - DY;
+		return (AX_Y);
 	}
-	return (0);
 }
 
 static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	int i;
-	int icr;
+	int axis;
 
 	i = 0;
-	icr = get_args(map_info, start, end);
+	axis = get_args(map_info, start, end);
 	mlx_pixel_put(MLX, WIN, start->ix, start->iy, WHITE);
 	while (i++ <= DX - 1)
 	{
@@ -56,7 +56,7 @@ static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 		}
 		else
 			ERR = ERR + 2 * DY;
-		if (icr == ICR_X)
+		if (axis == AX_X)
 			mlx_pixel_put(MLX, WIN, X, Y, WHITE);
 		else
 			mlx_pixel_put(MLX, WIN, Y, X, WHITE);
