@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:08:49 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 13:30:19 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 13:34:21 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ void        iso(t_map *map_info)
 		x = 0;
 		while (x < M_WIDTH)
 		{
-			map_info->pixels[y][x]->ix = BEG_X + ((PIX_X - PIX_Y) * cos(0.523599)) * ZOOM;
-            
-			map_info->pixels[y][x]->iy = BEG_Y + (-PIX_Z * ZMOD) + ((PIX_X + PIX_Y) \
+			PIX_IX = BEG_X + ((PIX_X - PIX_Y) * cos(0.523599)) * ZOOM;
+			PIX_IY = BEG_Y + (-PIX_Z * ZMOD) + ((PIX_X + PIX_Y) \
             * sin(0.523599)) * ZOOM;
 			x++;
 		}
@@ -45,8 +44,8 @@ void		conic(t_map *map_info)
 		x = 0;
 		while (x < M_WIDTH)
 		{
-			map_info->pixels[y][x]->ix = BEG_X + PIX_X * ZOOM;
-			map_info->pixels[y][x]->iy = BEG_Y + PIX_Y * ZOOM;
+			PIX_IX = BEG_X + PIX_X * ZOOM;
+			PIX_IY = BEG_Y + PIX_Y * ZOOM;
 			x++;
 		}
 		y++;

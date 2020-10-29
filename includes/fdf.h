@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 13:23:14 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 13:32:29 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@
 # define PIX_X	map_info->pixels[y][x]->px
 # define PIX_Y	map_info->pixels[y][x]->py
 # define PIX_Z	map_info->pixels[y][x]->pz
+# define PIX_IX	map_info->pixels[y][x]->ix
+# define PIX_IY	map_info->pixels[y][x]->iy
 
 # define MLX	map_info->mlx
 # define WIN	map_info->win
