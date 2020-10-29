@@ -6,19 +6,19 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 14:51:52 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 18:56:49 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
 
-static void	put_pixel(t_map *map_info, int axis)
+static void	put_pixel(t_map *map_info, int axis, int color)
 {
 	if (axis == AX_X)
-		mlx_pixel_put(MLX, WIN, X, Y, WHITE);
+		mlx_pixel_put(MLX, WIN, X, Y, color);
 	else
-		mlx_pixel_put(MLX, WIN, Y, X, WHITE);
+		mlx_pixel_put(MLX, WIN, Y, X, color);
 }
 
 static int	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
@@ -64,7 +64,7 @@ static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 		}
 		else
 			ERR = ERR + 2 * DY;
-		put_pixel(map_info, axis);
+		put_pixel(map_info, axis, start->color);
 		X += SX;
 	}
 }

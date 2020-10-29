@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 14:09:52 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 19:26:31 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@
 **	COLORS
 */
 
-# define WHITE 	16777215
-# define RED	16711680
-# define LIME	65280
+# define WHITE 	0xffffff
+# define RED	0xff0000
+# define LIME	0x00ff00
 
 /*
 **	MAP MACROS
@@ -49,6 +49,7 @@
 # define PIX_Z	map_info->pixels[y][x]->pz
 # define PIX_IX	map_info->pixels[y][x]->ix
 # define PIX_IY	map_info->pixels[y][x]->iy
+# define COLOR	map_info->pixels[y][x]->color
 
 # define MLX	map_info->mlx
 # define WIN	map_info->win
@@ -76,6 +77,8 @@
 
 # define ZOOM		map_info->controls->zoom
 # define ZMOD		map_info->controls->zmod
+# define ISO		1
+# define CONIC		2
 
 typedef struct		s_pixel
 {
@@ -97,6 +100,7 @@ typedef struct		s_map
 {
 	t_pixel         ***pixels;
 	t_ctrl			*controls;
+	int				pro;
     int             height;
     int             width;
 	void			*mlx;
@@ -118,10 +122,10 @@ void    init_map_info(t_map *info);
 void    init_controls(t_map *info);
 void    print_error(char *error_msg);
 void	free_all(t_map *map_info);
-int		press_key(int keycode, t_map *info);
+int		press_key(int keycode, t_map *map_info);
 int		expose_hook(t_map *map_info);
 void    draw_map(t_map *map_info);
 void	conic(t_map *map_info);
-void	iso(t_map *map_info);
+void	isometric(t_map *map_info);
 
 #endif
