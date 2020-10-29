@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 13:05:40 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 13:27:56 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end, int ret)
 	}
 }
 
-void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
+static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	int i;
 	int icr;

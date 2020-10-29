@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 12:32:18 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 13:23:14 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,6 @@ void    init_controls(t_map *info);
 void    print_error(char *error_msg);
 void	free_all(t_map *map_info);
 int		press_key(int keycode, t_map *info);
-void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end);
 int		expose_hook(t_map *map_info);
 void    draw_map(t_map *map_info);
 void	conic(t_map *map_info);
