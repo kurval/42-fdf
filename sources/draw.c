@@ -6,12 +6,20 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 14:10:54 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 14:51:52 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
+
+static void	put_pixel(t_map *map_info, int axis)
+{
+	if (axis == AX_X)
+		mlx_pixel_put(MLX, WIN, X, Y, WHITE);
+	else
+		mlx_pixel_put(MLX, WIN, Y, X, WHITE);
+}
 
 static int	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 {
@@ -46,20 +54,17 @@ static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 
 	i = 0;
 	axis = get_args(map_info, start, end);
-	mlx_pixel_put(MLX, WIN, start->ix, start->iy, WHITE);
+	//mlx_pixel_put(MLX, WIN, start->ix, start->iy, WHITE);
 	while (i++ <= DX - 1)
 	{
 		if (ERR > 0)
-		{
+		{	
 			Y += SY;
 			ERR = ERR + 2 * DY - 2 * DX;
 		}
 		else
 			ERR = ERR + 2 * DY;
-		if (axis == AX_X)
-			mlx_pixel_put(MLX, WIN, X, Y, WHITE);
-		else
-			mlx_pixel_put(MLX, WIN, Y, X, WHITE);
+		put_pixel(map_info, axis);
 		X += SX;
 	}
 }
