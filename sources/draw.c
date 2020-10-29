@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 12:09:04 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 13:05:40 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,12 @@ void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 	i = 0;
 	icr = (ft_abs(end->ix - start->ix) > ft_abs(end->iy - start->iy));
 	get_args(map_info, start, end, icr);
-	mlx_pixel_put(MLX, WIN, start->ix, end->iy, WHITE);
 	while (i++ <= DX - 1)
 	{
 		if (ERR > 0)
 		{
 			Y += SY;
-			ERR = ERR + 2 * (DY + DX);
+			ERR = ERR + 2 * DY - 2 * DX;
 		}
 		else
 			ERR = ERR + 2 * DY;

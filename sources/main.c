@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 12:10:30 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 12:13:15 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 12:32:26 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			expose_hook(t_map *map_info)
 {
-	conic(map_info);
+	iso(map_info);
 	return (1);
 }
 

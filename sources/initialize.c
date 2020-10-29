@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:31:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 11:55:53 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 12:55:28 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void    init_controls(t_map *info)
     if (!(new_controls = (t_ctrl*)malloc(sizeof(t_ctrl))))
         print_error(MALLOC_ERROR);
     new_controls->zoom = 25;
+    new_controls->zmod = 2;
     info->controls = new_controls;
 }
