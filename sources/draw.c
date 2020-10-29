@@ -6,16 +6,16 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 13:27:56 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 14:06:02 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
 
-static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end, int ret)
+static int	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 {
-	if (ret == 1)
+	if ((ft_abs(end->ix - start->ix) > ft_abs(end->iy - start->iy)))
 	{
 		DX = ft_abs(end->ix - start->ix);
 		DY = ft_abs(end->iy - start->iy);
@@ -24,6 +24,7 @@ static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end, int ret)
 		X = start->ix + SX;
 		Y = start->iy;
 		ERR = 2 * DY - DX;
+		return (1);
 	}
 	else
 	{
@@ -35,6 +36,7 @@ static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end, int ret)
 		Y = start->ix;
 		ERR = 2 * DX - DY;
 	}
+	return (0);
 }
 
 static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
@@ -43,8 +45,8 @@ static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 	int icr;
 
 	i = 0;
-	icr = (ft_abs(end->ix - start->ix) > ft_abs(end->iy - start->iy));
-	get_args(map_info, start, end, icr);
+	icr = get_args(map_info, start, end);
+	mlx_pixel_put(MLX, WIN, start->ix, start->iy, WHITE);
 	while (i++ <= DX - 1)
 	{
 		if (ERR > 0)
@@ -54,7 +56,7 @@ static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 		}
 		else
 			ERR = ERR + 2 * DY;
-		if (icr)
+		if (icr == ICR_X)
 			mlx_pixel_put(MLX, WIN, X, Y, WHITE);
 		else
 			mlx_pixel_put(MLX, WIN, Y, X, WHITE);
