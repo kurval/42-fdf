@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/28 20:47:53 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 11:09:02 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,18 @@ static void	store_values(char **values, t_map *map_info, int y)
 		print_error(MALLOC_ERROR);
 	while (values[x] != NULL)
 	{
-		if (!(map_info->pixels[y][x] = (t_pixel *)malloc(sizeof(t_pixel))))
+		if (!(PIX = (t_pixel *)malloc(sizeof(t_pixel))))
 			print_error(MALLOC_ERROR);
-		map_info->pixels[y][x]->py = y;
-		map_info->pixels[y][x]->px = x;
+		PIX_X = x;
+		PIX_Y = y;
 		if (!(ft_atoi_err(values[x])))
 			print_error(MAP_ERROR);
-		map_info->pixels[y][x]->pz = ft_atoi(values[x]);
+		PIX_Z = ft_atoi(values[x]);
 		free(values[x]);
 		x++;
 	}
 	free(values);
-	map_info->pixels[y][x] = NULL;
+	PIX = NULL;
 }
 
 static void	save_lines(int fd, t_map *map_info, char *file1)

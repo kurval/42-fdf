@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   projections.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 12:10:30 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 12:13:15 by vkurkela         ###   ########.fr       */
+/*   Created: 2020/10/29 12:08:49 by vkurkela          #+#    #+#             */
+/*   Updated: 2020/10/29 12:09:27 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-int			expose_hook(t_map *map_info)
+void		conic(t_map *map_info)
 {
-	conic(map_info);
-	return (1);
-}
+	int	x;
+	int	y;
 
-int main(int args, char **argv)
-{
-    t_map   map_info;
-
-    init_map_info(&map_info);
-    init_controls(&map_info);
-    read_input(args, argv, &map_info);
-    mlx_expose_hook(map_info.win, expose_hook, &map_info);
-    mlx_key_hook(map_info.win, press_key, &map_info);
-    mlx_loop(map_info.mlx);
-    free_all(&map_info);
-    return (0);
+	y = 0;
+	while (y < M_HEIGHT)
+	{
+		x = 0;
+		while (x < M_WIDTH)
+		{
+			map_info->pixels[y][x]->ix = BEG_X + PIX_X * ZOOM;
+			map_info->pixels[y][x]->iy = BEG_Y + PIX_Y * ZOOM;
+			x++;
+		}
+		y++;
+	}
+	draw_map(map_info);
 }

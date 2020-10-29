@@ -6,13 +6,13 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 11:37:51 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/21 11:48:00 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/29 12:12:46 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-void    free_map(t_map *map_info)
+static void    free_map(t_map *map_info)
 {
     int i;
 	int x;
@@ -30,4 +30,10 @@ void    free_map(t_map *map_info)
 		i++;
 	}
     free(map_info->pixels);
+}
+
+void	free_all(t_map *map_info)
+{
+	free(map_info->controls);
+	free_map(map_info);
 }
