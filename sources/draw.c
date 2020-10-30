@@ -6,25 +6,19 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 10:29:50 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 18:40:45 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
 
-static int    get_color(t_pixel *start, t_pixel *end)
+static void	put_pixel(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	int color;
 
-	color = 0;
-	color = (start->pz || end->pz) ? RED : WHITE;
-	return (color);
-}
-
-static void	put_pixel(t_map *map_info, int axis, int color)
-{
-	if (axis == AX_X)
+	color = get_color(map_info, start, end);
+	if (AXIS == AX_X)
 		mlx_pixel_put(MLX, WIN, X, Y, color);
 	else
 		mlx_pixel_put(MLX, WIN, Y, X, color);
@@ -59,10 +53,12 @@ static int	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	int i;
-	int axis;
 
 	i = 0;
-	axis = get_args(map_info, start, end);
+	AXIS = get_args(map_info, start, end);
+	if (map_info->pro == ISO)
+		mlx_pixel_put(MLX, WIN, start->ix, start->iy, \
+		get_color(map_info, start, end));
 	while (i++ <= DX - 1)
 	{
 		if (ERR > 0)
@@ -72,7 +68,7 @@ static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 		}
 		else
 			ERR = ERR + 2 * DY;
-		put_pixel(map_info, axis, get_color(start, end));
+		put_pixel(map_info, start, end);
 		X += SX;
 	}
 }

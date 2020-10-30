@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 17:53:25 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 11:16:34 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 18:41:35 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static void set_shift(int keycode, t_map *map_info)
 static void set_altitude(int keycode, t_map *map_info)
 {
     if (keycode == 97)
-        map_info->controls->zmod += 2;
+        map_info->controls->zmod += 0.5;
     else if (keycode == 115)
-        map_info->controls->zmod -= 2;
+        map_info->controls->zmod -= 0.5;
     mlx_clear_window(MLX, WIN);
     expose_hook(map_info);
 }

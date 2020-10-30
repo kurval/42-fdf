@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:31:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 11:17:31 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 18:49:35 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void    init_map_info(t_map *info)
     info->shift_x = WIDTH / 4;
     info->shift_y = HEIGHT / 4;
     info->pro = ISO;
+    info->axis = 0;
 }
 
 void    init_controls(t_map *info)
@@ -46,6 +47,8 @@ void    init_controls(t_map *info)
 
 void    reset_controls(t_map *info)
 {
+    info->shift_x = WIDTH / 4;
+    info->shift_y = HEIGHT / 4;
     info->controls->zoom = 25;
     info->controls->zmod = 2;
 }

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 11:15:18 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 18:49:48 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@
 # define SHIFT_X		map_info->shift_x
 # define SHIFT_Y		map_info->shift_y
 
+# define AXIS		map_info->axis
 # define AX_X		1
 # define AX_Y		0
 
@@ -118,6 +119,7 @@ typedef struct		s_map
 	int				err;
 	int				shift_x;
 	int				shift_y;
+	int				axis;
 }					t_map;
 
 int     main(int args, char **argv);
@@ -132,5 +134,7 @@ void    draw_map(t_map *map_info);
 void	conic(t_map *map_info);
 void	isometric(t_map *map_info);
 void    reset_controls(t_map *info);
+int 	get_color(t_map *map_info, t_pixel *start, t_pixel *end);
+int		set_color(t_pixel *pixel);
 
 #endif
