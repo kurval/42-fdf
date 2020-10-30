@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 19:26:31 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 10:10:47 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@
 **	KEYS
 */
 
-# define ESC	65307
+# define ESC		65307
+# define KEY_LEFT	65361
+# define KEY_UP		65362
+# define KEY_RIGHT	65363
+# define KEY_DOWN	65364
 
 /*
 **	COLORS
@@ -65,8 +69,8 @@
 # define M_HEIGHT	map_info->height
 # define M_WIDTH	map_info->width
 
-# define BEG_X		map_info->beg_x
-# define BEG_Y		map_info->beg_y
+# define SHIFT_X		map_info->shift_x
+# define SHIFT_Y		map_info->shift_y
 
 # define AX_X		1
 # define AX_Y		0
@@ -112,8 +116,8 @@ typedef struct		s_map
 	int				x;
 	int				y;
 	int				err;
-	int				beg_x;
-	int				beg_y;
+	int				shift_x;
+	int				shift_y;
 }					t_map;
 
 int     main(int args, char **argv);

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:08:49 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 09:01:48 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 10:10:47 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void        isometric(t_map *map_info)
 		x = 0;
 		while (x < M_WIDTH)
 		{
-			PIX_IX = BEG_X + ((PIX_X - PIX_Y) * cos(0.523599)) * ZOOM;
-			PIX_IY = BEG_Y + (-PIX_Z * ZMOD) + ((PIX_X + PIX_Y) \
+			PIX_IX = SHIFT_X + ((PIX_X - PIX_Y) * cos(0.523599)) * ZOOM;
+			PIX_IY = SHIFT_Y + (-PIX_Z * ZMOD) + ((PIX_X + PIX_Y) \
             * sin(0.523599)) * ZOOM;
 			x++;
 		}
@@ -43,8 +43,8 @@ void		conic(t_map *map_info)
 		x = 0;
 		while (x < M_WIDTH)
 		{
-			PIX_IX = BEG_X + PIX_X * ZOOM;
-			PIX_IY = BEG_Y + PIX_Y * ZOOM;
+			PIX_IX = SHIFT_X + PIX_X * ZOOM;
+			PIX_IY = SHIFT_Y + PIX_Y * ZOOM;
 			x++;
 		}
 		y++;

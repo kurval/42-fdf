@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:31:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 19:14:22 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 10:10:05 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void    init_map_info(t_map *info)
 	info->x = 0;
 	info->y = 0;
 	info->err = 0;
-    info->beg_x = WIDTH / 4;
-    info->beg_y = HEIGHT / 4;
+    info->shift_x = WIDTH / 4;
+    info->shift_y = HEIGHT / 4;
     info->pro = ISO;
 }
 
