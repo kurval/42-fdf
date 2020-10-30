@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 18:49:48 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 19:02:13 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,34 @@
 **	MAP MACROS
 */
 
-# define PIX	map_info->pixels[y][x]
-# define PIX_X	map_info->pixels[y][x]->px
-# define PIX_Y	map_info->pixels[y][x]->py
-# define PIX_Z	map_info->pixels[y][x]->pz
-# define PIX_IX	map_info->pixels[y][x]->ix
-# define PIX_IY	map_info->pixels[y][x]->iy
-# define COLOR	map_info->pixels[y][x]->color
+# define PIX		map_info->pixels[y][x]
+# define PIX_X		map_info->pixels[y][x]->px
+# define PIX_Y		map_info->pixels[y][x]->py
+# define PIX_Z		map_info->pixels[y][x]->pz
+# define PIX_IX		map_info->pixels[y][x]->ix
+# define PIX_IY		map_info->pixels[y][x]->iy
+# define COLOR		map_info->pixels[y][x]->color
+# define START_X	start->ix
+# define START_Y	start->iy
+# define END_X		end->ix
+# define END_Y		end->iy
 
-# define MLX	map_info->mlx
-# define WIN	map_info->win
-# define ERR	map_info->err
-# define X		map_info->x
-# define Y		map_info->y
+# define MLX		map_info->mlx
+# define WIN		map_info->win
+# define ERR		map_info->err
+# define X			map_info->x
+# define Y			map_info->y
 
-# define DX		map_info->dx
-# define DY		map_info->dy
-# define SX		map_info->sx
-# define SY		map_info->sy
+# define DX			map_info->dx
+# define DY			map_info->dy
+# define SX			map_info->sx
+# define SY			map_info->sy
 
 # define M_HEIGHT	map_info->height
 # define M_WIDTH	map_info->width
 
-# define SHIFT_X		map_info->shift_x
-# define SHIFT_Y		map_info->shift_y
+# define SHIFT_X	map_info->shift_x
+# define SHIFT_Y	map_info->shift_y
 
 # define AXIS		map_info->axis
 # define AX_X		1

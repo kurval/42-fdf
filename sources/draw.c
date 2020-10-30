@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 18:40:45 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 19:11:42 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,25 @@ static void	put_pixel(t_map *map_info, t_pixel *start, t_pixel *end)
 
 static int	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 {
-	if ((ft_abs(end->ix - start->ix) > ft_abs(end->iy - start->iy)))
+	if ((ft_abs(END_X - START_X) > ft_abs(END_Y - START_Y)))
 	{
-		DX = ft_abs(end->ix - start->ix);
-		DY = ft_abs(end->iy - start->iy);
-		SX = (end->ix >= start->ix) ? 1 : -1;
-		SY = (end->iy >= start->iy) ? 1 : -1;
-		X = start->ix + SX;
-		Y = start->iy;
+		DX = ft_abs(END_X - START_X);
+		DY = ft_abs(END_Y - START_Y);
+		SX = (END_X >= START_X) ? 1 : -1;
+		SY = (END_Y >= START_Y) ? 1 : -1;
+		X = START_X + SX;
+		Y = START_Y;
 		ERR = 2 * DY - DX;
 		return (AX_X);
 	}
 	else
 	{
-		DX = ft_abs(end->iy - start->iy);
-		DY = ft_abs(end->ix - start->ix);
-		SX = (end->iy >= start->iy) ? 1 : -1;
-		SY = (end->ix >= start->ix) ? 1 : -1;
-		X = start->iy + SX;
-		Y = start->ix;
+		DX = ft_abs(END_Y - START_Y);
+		DY = ft_abs(END_X - START_X);
+		SX = (END_Y >= START_Y) ? 1 : -1;
+		SY = (END_X >= START_X) ? 1 : -1;
+		X = START_Y + SX;
+		Y = START_X;
 		ERR = 2 * DX - DY;
 		return (AX_Y);
 	}
@@ -57,7 +57,7 @@ static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 	i = 0;
 	AXIS = get_args(map_info, start, end);
 	if (map_info->pro == ISO)
-		mlx_pixel_put(MLX, WIN, start->ix, start->iy, \
+		mlx_pixel_put(MLX, WIN, START_X, START_Y, \
 		get_color(map_info, start, end));
 	while (i++ <= DX - 1)
 	{

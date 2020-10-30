@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:14:01 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 18:26:44 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 19:02:42 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int get_color(t_map *map_info, t_pixel *start, t_pixel *end)
     if (start->color == end->color)
         return (end->color);
     if (AXIS == AX_X)
-        percentage = (DX > DY) ? percent(start->ix, end->ix, X) : \
-        percent(start->iy, end->iy, Y);
+        percentage = (DX > DY) ? percent(START_X, END_X, X) : \
+        percent(START_Y, END_Y, Y);
     else
-        percentage = (DY > DX) ? percent(start->ix, end->ix, Y) : \
-        percent(start->iy, end->iy, X);
+        percentage = (DY > DX) ? percent(START_X, END_X, Y) : \
+        percent(START_Y, END_Y, X);
     red = get_light((start->color >> 16) & 0xFF, (end->color >> 16) & 0xFF, percentage);
     green = get_light((start->color >> 8) & 0xFF, (end->color >> 8) & 0xFF, percentage);
     blue = get_light(start->color & 0xFF, end->color & 0xFF, percentage);
