@@ -6,12 +6,21 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 18:56:49 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 09:12:34 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
+
+static int    get_color(t_pixel *start, t_pixel *end)
+{
+	int color;
+
+	color = 0;
+	color = (start->pz || end->pz) ? RED : WHITE;
+	return (color);
+}
 
 static void	put_pixel(t_map *map_info, int axis, int color)
 {
@@ -64,7 +73,7 @@ static void    draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 		}
 		else
 			ERR = ERR + 2 * DY;
-		put_pixel(map_info, axis, start->color);
+		put_pixel(map_info, axis, get_color(start, end));
 		X += SX;
 	}
 }
