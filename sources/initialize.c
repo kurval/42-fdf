@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:31:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 10:10:05 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 11:17:31 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,10 @@ void    init_controls(t_map *info)
     new_controls->zoom = 25;
     new_controls->zmod = 2;
     info->controls = new_controls;
+}
+
+void    reset_controls(t_map *info)
+{
+    info->controls->zoom = 25;
+    info->controls->zmod = 2;
 }

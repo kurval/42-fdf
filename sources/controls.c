@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 17:53:25 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 10:15:40 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 11:16:34 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,11 @@ int    press_key(int keycode, t_map *map_info)
         set_altitude(keycode, map_info);
     else if (keycode >= KEY_LEFT && keycode <= KEY_DOWN)
         set_shift(keycode, map_info);
+    else if (keycode == 100)
+    {
+        reset_controls(map_info);
+        mlx_clear_window(MLX, WIN);
+        expose_hook(map_info);
+    }
     return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 10:10:47 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/30 11:15:18 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,5 +131,6 @@ int		expose_hook(t_map *map_info);
 void    draw_map(t_map *map_info);
 void	conic(t_map *map_info);
 void	isometric(t_map *map_info);
+void    reset_controls(t_map *info);
 
 #endif
