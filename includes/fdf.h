@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 19:02:13 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/31 12:22:30 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,11 @@
 # define SX			map_info->sx
 # define SY			map_info->sy
 
-# define M_HEIGHT	map_info->height
-# define M_WIDTH	map_info->width
+# define MAP_HEIGHT	map_info->height
+# define MAP_WIDTH	map_info->width
 
 # define SHIFT_X	map_info->shift_x
 # define SHIFT_Y	map_info->shift_y
-
-# define AXIS		map_info->axis
-# define AX_X		1
-# define AX_Y		0
 
 /*
 **	CONTROLS
