@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:31:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/30 18:49:35 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/31 12:31:30 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void    init_map_info(t_map *info)
 	info->x = 0;
 	info->y = 0;
 	info->err = 0;
-    info->shift_x = WIDTH / 4;
-    info->shift_y = HEIGHT / 4;
     info->pro = ISO;
     info->axis = 0;
 }
@@ -42,13 +40,15 @@ void    init_controls(t_map *info)
         print_error(MALLOC_ERROR);
     new_controls->zoom = 25;
     new_controls->zmod = 2;
+    new_controls->shift_x = WIDTH / 4;
+    new_controls->shift_y = HEIGHT / 4;
     info->controls = new_controls;
 }
 
 void    reset_controls(t_map *info)
 {
-    info->shift_x = WIDTH / 4;
-    info->shift_y = HEIGHT / 4;
+    info->controls->shift_x = WIDTH / 4;
+    info->controls->shift_y = HEIGHT / 4;
     info->controls->zoom = 25;
     info->controls->zmod = 2;
 }

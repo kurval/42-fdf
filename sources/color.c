@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:14:01 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/31 12:06:07 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/31 12:27:39 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ static int get_light(int start, int end, double percentage)
 
 int get_color(t_map *map_info, t_pixel *start, t_pixel *end)
 {
-    int     red;
-    int     green;
-    int     blue;
+    int     r;
+    int     g;
+    int     b;
     double  percentage;
 
     if (start->color == end->color)
         return (end->color);
     percentage = (DX > DY) ? percent(START_X, END_X, X) : \
     percent(START_Y, END_Y, Y);
-    red = get_light((start->color >> 16) & 0xFF, (end->color >> 16) & 0xFF, percentage);
-    green = get_light((start->color >> 8) & 0xFF, (end->color >> 8) & 0xFF, percentage);
-    blue = get_light(start->color & 0xFF, end->color & 0xFF, percentage);
-    return ((red << 16) | (green << 8) | blue);
+    r = get_light((start->color >> 16) & 0xFF, (end->color >> 16) & 0xFF, percentage);
+    g = get_light((start->color >> 8) & 0xFF, (end->color >> 8) & 0xFF, percentage);
+    b = get_light(start->color & 0xFF, end->color & 0xFF, percentage);
+    return ((r << 16) | (g << 8) | b);
 }

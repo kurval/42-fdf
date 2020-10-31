@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/31 12:22:30 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/31 12:34:04 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@
 **	MAP MACROS
 */
 
+# define MLX		map_info->mlx
+# define WIN		map_info->win
+# define MAP_HEIGHT	map_info->height
+# define MAP_WIDTH	map_info->width
+
 # define PIX		map_info->pixels[y][x]
 # define PIX_X		map_info->pixels[y][x]->px
 # define PIX_Y		map_info->pixels[y][x]->py
@@ -54,27 +59,18 @@
 # define PIX_IX		map_info->pixels[y][x]->ix
 # define PIX_IY		map_info->pixels[y][x]->iy
 # define COLOR		map_info->pixels[y][x]->color
+
 # define START_X	start->ix
 # define START_Y	start->iy
 # define END_X		end->ix
 # define END_Y		end->iy
-
-# define MLX		map_info->mlx
-# define WIN		map_info->win
 # define ERR		map_info->err
 # define X			map_info->x
 # define Y			map_info->y
-
 # define DX			map_info->dx
 # define DY			map_info->dy
 # define SX			map_info->sx
 # define SY			map_info->sy
-
-# define MAP_HEIGHT	map_info->height
-# define MAP_WIDTH	map_info->width
-
-# define SHIFT_X	map_info->shift_x
-# define SHIFT_Y	map_info->shift_y
 
 /*
 **	CONTROLS
@@ -82,6 +78,8 @@
 
 # define ZOOM		map_info->controls->zoom
 # define ZMOD		map_info->controls->zmod
+# define SHIFT_X	map_info->controls->shift_x
+# define SHIFT_Y	map_info->controls->shift_y
 # define ISO		1
 # define CONIC		2
 
@@ -99,6 +97,8 @@ typedef struct		s_ctrl
 {
 	double			zoom;
 	double			zmod;
+	int				shift_x;
+	int				shift_y;
 }					t_ctrl;
 
 typedef struct		s_map
@@ -117,8 +117,6 @@ typedef struct		s_map
 	int				x;
 	int				y;
 	int				err;
-	int				shift_x;
-	int				shift_y;
 	int				axis;
 }					t_map;
 
