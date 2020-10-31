@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/31 15:09:04 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/31 15:13:43 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void    vertical(t_map *map_info, t_pixel *start, t_pixel *end)
 		if (ERR > 0)
 		{	
 			X += SX;
-			ERR = ERR + 2 * DX - 2 * DY;
+			ERR = ERR + 2 * (DX - DY);
 		}
 		else
 			ERR = ERR + 2 * DX;
@@ -56,7 +56,7 @@ static void    horizontal(t_map *map_info, t_pixel *start, t_pixel *end)
 		if (ERR > 0)
 		{	
 			Y += SY;
-			ERR = ERR + 2 * DY - 2 * DX;
+			ERR = ERR + 2 * (DY - DX);
 		}
 		else
 			ERR = ERR + 2 * DY;
