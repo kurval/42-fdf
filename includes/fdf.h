@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/31 12:34:04 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/10/31 12:34:43 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,6 @@ typedef struct		s_map
 	int				x;
 	int				y;
 	int				err;
-	int				axis;
 }					t_map;
 
 int     main(int args, char **argv);
