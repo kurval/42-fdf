@@ -1,8 +1,8 @@
 NAME = fdf
 
 SOURCES = ./sources/main.c ./sources/read_input.c ./sources/initialize.c \
-./sources/errors.c ./sources/free_all.c ./sources/controls.c ./sources/draw.c \
-./sources/projections.c ./sources/color.c
+./sources/errors.c ./sources/free_all.c ./sources/draw.c ./sources/color.c \
+./sources/projections.c ./sources/mouse_controls.c ./sources/key_controls.c
 
 OBJECTS = $(subst .c,.o,$(SOURCES))
 

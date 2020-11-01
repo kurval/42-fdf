@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/31 12:34:43 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/01 12:32:48 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@
 */
 
 # define WHITE 	0xffffff
-# define RED	0xff0000
-# define LIME	0x00ff00
+# define RED	0xff00ff
+# define LIME	0x800000
 
 /*
 **	MAP MACROS
@@ -133,5 +133,6 @@ void	isometric(t_map *map_info);
 void    reset_controls(t_map *info);
 int 	get_color(t_map *map_info, t_pixel *start, t_pixel *end);
 int		set_color(t_pixel *pixel);
+int    	press_mouse(int button, int x, int y, t_map *map_info);
 
 #endif
