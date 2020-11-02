@@ -6,20 +6,26 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:14:01 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/31 12:27:39 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/02 11:12:51 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
 
-int    set_color(t_pixel *pixel)
+int    set_color(t_map *map_info, t_pixel *pixel)
 {
-	int color;
-
-	color = 0;
-	color = (pixel->pz) ? RED : LIME;
-	return (color);
+	if (!map_info->controls->color)
+        return (WHITE);
+    else
+    {
+        if ((pixel->pz * ZMOD) <= -1)
+            return (BOTTOM);
+        else if ((pixel->pz * ZMOD) >= 1)
+            return (TOP);
+        else
+            return (GROUND);
+    }
 }
 
 static double percent(int start, int end, int current)

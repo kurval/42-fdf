@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/01 13:21:51 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/02 11:16:22 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@
 **	COLORS
 */
 
-# define WHITE 	0xffffff
-# define RED	0xff00ff
-# define LIME	0x800000
+# define WHITE		0xffffff
+# define BOTTOM 	0x00bfff
+# define TOP		0xff8000
+# define GROUND		0xff00ff
 
 /*
 **	MAP MACROS
@@ -99,6 +100,7 @@ typedef struct		s_ctrl
 	double			zmod;
 	int				shift_x;
 	int				shift_y;
+	int				color;
 }					t_ctrl;
 
 typedef struct		s_map
@@ -132,7 +134,7 @@ void	conic(t_map *map_info);
 void	isometric(t_map *map_info);
 void    reset_controls(t_map *info);
 int 	get_color(t_map *map_info, t_pixel *start, t_pixel *end);
-int		set_color(t_pixel *pixel);
+int    	set_color(t_map *map_info, t_pixel *pixel);
 int    	press_mouse(int button, int x, int y, t_map *map_info);
 
 #endif

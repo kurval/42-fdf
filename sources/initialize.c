@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:31:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/31 12:34:50 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/02 10:10:38 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void    reset_controls(t_map *info)
     info->controls->shift_y = HEIGHT / 4;
     info->controls->zoom = 25;
     info->controls->zmod = 2;
+    info->controls->color = 0;
 }

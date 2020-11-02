@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:08:49 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/31 12:22:14 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/02 10:04:11 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void        isometric(t_map *map_info)
 			PIX_IX = SHIFT_X + ((PIX_X - PIX_Y) * cos(0.523599)) * ZOOM;
 			PIX_IY = SHIFT_Y + (-PIX_Z * ZMOD) + ((PIX_X + PIX_Y) \
             * sin(0.523599)) * ZOOM;
-            COLOR = set_color(PIX);
+            COLOR = set_color(map_info, PIX);
 			x++;
 		}
 		y++;
@@ -46,7 +46,7 @@ void		conic(t_map *map_info)
 		{
 			PIX_IX = SHIFT_X + PIX_X * ZOOM;
 			PIX_IY = SHIFT_Y + PIX_Y * ZOOM;
-            COLOR = set_color(PIX);
+            COLOR = set_color(map_info, PIX);
 			x++;
 		}
 		y++;
