@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/10/29 11:09:02 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/02 18:33:17 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ static void	print_points(t_map *map_info)
 	}
 }
 
-static int	check_width(t_map *map_info, char **values)
+static int	check_width(t_map *map_info, char **values, int line_num)
 {
 	int	x;
 
 	x = 0;
 	while (values[x])
 		x++;
-	if (x == 0)
+	if (x == 0 || (line_num > 0 && x != map_info->width))
 		print_error(MAP_ERROR);
-	if (map_info->width < x)
+	if (x > map_info->width)
 		map_info->width = x;
 	return (x);
 }
@@ -52,7 +52,7 @@ static void	store_values(char **values, t_map *map_info, int y)
 	int	width;
 
 	x = 0;
-	width = check_width(map_info, values);
+	width = check_width(map_info, values, y);
 	if (!(map_info->pixels[y] = (t_pixel **)malloc(sizeof(t_pixel *) * width + 1)))
 		print_error(MALLOC_ERROR);
 	while (values[x] != NULL)
