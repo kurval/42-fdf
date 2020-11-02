@@ -6,12 +6,11 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 12:10:30 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/01 13:22:37 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/02 23:52:12 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
-#define PI 3.14159265
 
 int			expose_hook(t_map *map_info)
 {
