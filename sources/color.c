@@ -6,25 +6,25 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:14:01 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/03 09:14:54 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/03 09:17:44 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
 
-int    set_color(t_map *map_info, t_pixel *pixel)
+int    set_color(t_map *map_info, int z)
 {
 	if (!map_info->controls->color)
         return (WHITE);
     else
     {
-        if ((pixel->pz * ZMOD) >= 80 || (pixel->pz * ZMOD) <= -80)
-            return (((pixel->pz * ZMOD) >= 80) ? TOP : BOTTOM);
-        else if ((pixel->pz * ZMOD) >= 40 || (pixel->pz * ZMOD) <= -40)
-            return (((pixel->pz * ZMOD) >= 40) ? HIGHMID : LOWMID);
-        else if ((pixel->pz * ZMOD) >= 10 || (pixel->pz * ZMOD) <= -10)
-            return (((pixel->pz * ZMOD) >= 10) ? HIGH : LOW);
+        if (z >= 80 || z <= -80)
+            return ((z >= 80) ? TOP : BOTTOM);
+        else if (z >= 40 || z <= -40)
+            return ((z >= 40) ? HIGHMID : LOWMID);
+        else if (z >= 10 || z <= -10)
+            return ((z >= 10) ? HIGH : LOW);
         else
             return (GROUND);
     }

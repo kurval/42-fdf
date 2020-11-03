@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/02 17:10:42 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/03 09:17:41 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ void	conic(t_map *map_info);
 void	isometric(t_map *map_info);
 void    reset_controls(t_map *info);
 int 	get_color(t_map *map_info, t_pixel *start, t_pixel *end);
-int    	set_color(t_map *map_info, t_pixel *pixel);
+int    	set_color(t_map *map_info, int z);
 int    	press_mouse(int button, int x, int y, t_map *map_info);
 
 #endif
