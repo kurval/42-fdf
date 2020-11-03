@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:14:01 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/03 09:11:01 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/03 09:14:54 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 
 int    set_color(t_map *map_info, t_pixel *pixel)
 {
-    int color;
-
-    color = 0;
 	if (!map_info->controls->color)
         return (WHITE);
     else
     {
         if ((pixel->pz * ZMOD) >= 80 || (pixel->pz * ZMOD) <= -80)
-            return (color = ((pixel->pz * ZMOD) >= 80) ? TOP : BOTTOM);
+            return (((pixel->pz * ZMOD) >= 80) ? TOP : BOTTOM);
         else if ((pixel->pz * ZMOD) >= 40 || (pixel->pz * ZMOD) <= -40)
-            return (color = ((pixel->pz * ZMOD) >= 40) ? HIGHMID : LOWMID);
+            return (((pixel->pz * ZMOD) >= 40) ? HIGHMID : LOWMID);
         else if ((pixel->pz * ZMOD) >= 10 || (pixel->pz * ZMOD) <= -10)
-            return (color = ((pixel->pz * ZMOD) >= 10) ? HIGH : LOW);
+            return (((pixel->pz * ZMOD) >= 10) ? HIGH : LOW);
         else
             return (GROUND);
     }
