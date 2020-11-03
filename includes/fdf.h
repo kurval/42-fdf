@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/03 09:17:41 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/03 10:41:11 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ typedef struct		s_map
 int     main(int args, char **argv);
 void    read_input(int args, char **argv, t_map *map_info);
 void    init_map_info(t_map *info);
-void    init_controls(t_map *info);
+t_ctrl  *init_controls(void);
 void    print_error(char *error_msg);
 void	free_all(t_map *map_info);
 int		press_key(int keycode, t_map *map_info);

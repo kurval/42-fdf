@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:31:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/02 10:10:38 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/03 10:51:28 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void    init_map_info(t_map *info)
 {
     info->pixels = NULL;
-    info->controls = NULL;
+    info->controls = init_controls();
     info->height = 0;
     info->width = 0;
     info->mlx = mlx_init();
@@ -31,7 +31,7 @@ void    init_map_info(t_map *info)
     info->pro = ISO;
 }
 
-void    init_controls(t_map *info)
+t_ctrl  *init_controls(void)
 {
     t_ctrl  *new_controls;
 
@@ -41,7 +41,7 @@ void    init_controls(t_map *info)
     new_controls->zmod = 2;
     new_controls->shift_x = WIDTH / 4;
     new_controls->shift_y = HEIGHT / 4;
-    info->controls = new_controls;
+    return (new_controls);
 }
 
 void    reset_controls(t_map *info)
