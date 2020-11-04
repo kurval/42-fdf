@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:08:49 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/03 10:49:54 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/04 21:00:49 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void        isometric(t_map *map_info)
 {
     int	x;
 	int	y;
+	int previous_x;
+	int previous_y;
 
 	y = 0;
 	while (y < MAP_HEIGHT)
@@ -23,10 +25,11 @@ void        isometric(t_map *map_info)
 		x = 0;
 		while (x < MAP_WIDTH)
 		{
-			PIX_IX = SHIFT_X + ((PIX_X - PIX_Y) * cos(0.523599)) * ZOOM;
-			PIX_IY = SHIFT_Y + (-PIX_Z * ZMOD) + ((PIX_X + PIX_Y) \
-            * sin(0.523599)) * ZOOM;
-            COLOR = set_color(map_info, PIX_Z * ZMOD);
+			previous_x = RX;
+			previous_y = RY;
+			PIX_IX = SHIFT_X + (previous_x - previous_y) * cos(radian_ang(30));
+			PIX_IY = SHIFT_Y + ((-PIX_Z) + (previous_x + previous_y) * sin(radian_ang(30)));
+            COLOR = set_color(map_info, PIX_Z + ZMOD);
 			x++;
 		}
 		y++;
@@ -55,6 +58,7 @@ void		conic(t_map *map_info)
 
 int			expose_hook(t_map *map_info)
 {
+	rotate(map_info);
     if (map_info->pro == ISO)
 	    isometric(map_info);
     else if (map_info->pro == CONIC)

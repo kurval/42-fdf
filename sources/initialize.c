@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:31:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/03 10:51:28 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/04 20:16:52 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,23 @@ t_ctrl  *init_controls(void)
     if (!(new_controls = (t_ctrl*)malloc(sizeof(t_ctrl))))
         print_error(MALLOC_ERROR);
     new_controls->zoom = 25;
-    new_controls->zmod = 2;
-    new_controls->shift_x = WIDTH / 4;
-    new_controls->shift_y = HEIGHT / 4;
+    new_controls->zmod = 0.02;
+    new_controls->shift_x = WIDTH / 2;
+    new_controls->shift_y = HEIGHT / 2;
+    new_controls->y_angle = 0;
+    new_controls->x_angle = 0;
+    new_controls->z_angle = 0;
     return (new_controls);
 }
 
 void    reset_controls(t_map *info)
 {
-    info->controls->shift_x = WIDTH / 4;
-    info->controls->shift_y = HEIGHT / 4;
+    info->controls->shift_x = WIDTH / 2;
+    info->controls->shift_y = HEIGHT / 2;
     info->controls->zoom = 25;
-    info->controls->zmod = 2;
+    info->controls->zmod = 0.02;
     info->controls->color = 0;
+    info->controls->y_angle = 0;
+    info->controls->x_angle = 0;
+    info->controls->z_angle = 0;
 }

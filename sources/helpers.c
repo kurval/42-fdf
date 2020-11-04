@@ -6,11 +6,16 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:35:43 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/03 10:56:06 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/03 21:28:49 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
+
+double	radian_ang(int angle)
+{
+	return ((angle * M_PI) / 180);
+}
 
 static void    free_map(t_map *map_info)
 {

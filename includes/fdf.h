@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/03 10:41:11 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/04 20:08:45 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@
 # define PIX_Z		map_info->pixels[y][x]->pz
 # define PIX_IX		map_info->pixels[y][x]->ix
 # define PIX_IY		map_info->pixels[y][x]->iy
+# define RY			map_info->pixels[y][x]->ry
+# define RX			map_info->pixels[y][x]->rx
+# define RZ			map_info->pixels[y][x]->rz
 # define COLOR		map_info->pixels[y][x]->color
 
 # define START_X	start->ix
@@ -96,6 +99,9 @@ typedef struct		s_pixel
 	int				color;
 	int				ix;
 	int				iy;
+	double			ry;
+	double			rx;
+	double			rz;
 }					t_pixel;
 
 typedef struct		s_ctrl
@@ -105,6 +111,9 @@ typedef struct		s_ctrl
 	int				shift_x;
 	int				shift_y;
 	int				color;
+	int				y_angle;
+	int				x_angle;
+	int				z_angle;
 }					t_ctrl;
 
 typedef struct		s_map
@@ -140,5 +149,7 @@ void    reset_controls(t_map *info);
 int 	get_color(t_map *map_info, t_pixel *start, t_pixel *end);
 int    	set_color(t_map *map_info, int z);
 int    	press_mouse(int button, int x, int y, t_map *map_info);
+void	rotate(t_map *map_info);
+double	radian_ang(int angle);
 
 #endif
