@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 17:53:25 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 09:03:13 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 09:51:11 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static void set_angle(int keycode, t_map *map_info)
 
 int    press_key(int keycode, t_map *map_info)
 {
-    ft_printf("key %d\n", keycode);
     if (keycode == ESC)
         exit(0);
     else if (keycode >= 49 && keycode <= 50)

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:14:01 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 08:48:05 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 09:45:37 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int    set_color(t_map *map_info, int z)
         return (WHITE);
     else
     {
-        if (z >= 80 || z <= -80)
-            return ((z >= 80) ? TOP : BOTTOM);
-        else if (z >= 40 || z <= -40)
-            return ((z >= 40) ? HIGHMID : LOWMID);
-        else if (z >= 10 || z <= -10)
-            return ((z >= 10) ? HIGH : LOW);
+        if (z >= 8 || z <= -8)
+            return ((z >= 8) ? TOP : BOTTOM);
+        else if (z >= 4 || z <= -4)
+            return ((z >= 4) ? HIGHMID : LOWMID);
+        else if (z >= 1 || z <= -1)
+            return ((z >= 1) ? HIGH : LOW);
         else
             return (GROUND);
     }
