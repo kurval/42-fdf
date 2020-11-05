@@ -6,31 +6,12 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/02 18:33:17 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 10:09:30 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
-
-static void	print_points(t_map *map_info)
-{
-	int i;
-	int x;
-
-	i = 0;
-	while (map_info->pixels[i])
-	{	
-		x = 0;
-		while (map_info->pixels[i][x])
-		{
-			ft_printf("%d ", map_info->pixels[i][x]->pz);
-			x++;
-		}
-		i++;
-		ft_printf("\n");
-	}
-}
 
 static int	check_width(t_map *map_info, char **values, int line_num)
 {
@@ -131,5 +112,4 @@ void    read_input(int args, char **argv, t_map *map_info)
 	if (!(map_info->pixels = (t_pixel ***)malloc(sizeof(t_pixel **) * map_info->height + 1)))
 		print_error(MALLOC_ERROR);
 	save_lines(fd, map_info, argv[1]);
-	print_points(map_info);
 }

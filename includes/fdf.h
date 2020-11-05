@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 09:18:38 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 10:09:58 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@
 # define PIX_X		map_info->pixels[y][x]->px
 # define PIX_Y		map_info->pixels[y][x]->py
 # define PIX_Z		map_info->pixels[y][x]->pz
-# define PIX_IX		map_info->pixels[y][x]->ix
-# define PIX_IY		map_info->pixels[y][x]->iy
+# define PIX_IX		pixel->ix
+# define PIX_IY		pixel->iy
 # define RY			map_info->pixels[y][x]->ry
 # define RX			map_info->pixels[y][x]->rx
 # define RZ			map_info->pixels[y][x]->rz
@@ -143,13 +143,13 @@ void	free_all(t_map *map_info);
 int		press_key(int keycode, t_map *map_info);
 int		expose_hook(t_map *map_info);
 void    draw_map(t_map *map_info);
-void	conic(t_map *map_info);
-void	isometric(t_map *map_info);
 void    reset_controls(t_map *info);
 int 	get_color(t_map *map_info, t_pixel *start, t_pixel *end);
 int    	set_color(t_map *map_info, int z);
 int    	press_mouse(int button, int x, int y, t_map *map_info);
 void	rotate(t_map *map_info);
 double	radian_ang(int angle);
+void	projections(t_map *map_info);
+void	print_points(t_map *map_info);
 
 #endif
