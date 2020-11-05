@@ -1,4 +1,4 @@
-# 42-fdf
+# 42-FdF
 
 ![preview_gif](preview_fdf.gif)  
 *Visualizing “iron wire” meshing in 3D*
