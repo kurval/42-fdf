@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 17:53:25 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/04 21:26:54 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 09:03:13 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@
 static void set_altitude(int keycode, t_map *map_info)
 {
     if (keycode == 97)
-        map_info->controls->zmod += 1;
-    else if (keycode == 115)
         map_info->controls->zmod -= 1;
+    else if (keycode == 115)
+        map_info->controls->zmod += 1;
+    if (map_info->controls->zmod < 1)
+		map_info->controls->zmod = 1;
+	else if (map_info->controls->zmod > 100)
+		map_info->controls->zmod = 100;
     mlx_clear_window(MLX, WIN);
     expose_hook(map_info);
 }
@@ -42,17 +46,17 @@ static void set_color_mode(t_map *map_info)
 
 static void set_angle(int keycode, t_map *map_info)
 {
-    if (keycode == KEY_LEFT && map_info->controls->y_angle > -88)
+    if (keycode == KEY_LEFT)
         map_info->controls->y_angle -= 5;
-    else if (keycode == KEY_RIGHT && map_info->controls->y_angle < 88)
+    else if (keycode == KEY_RIGHT)
         map_info->controls->y_angle += 5;
-    else if (keycode == KEY_UP && map_info->controls->x_angle > -88)
+    else if (keycode == KEY_UP)
         map_info->controls->x_angle -= 5;
-    else if (keycode == KEY_DOWN && map_info->controls->x_angle < 88)
+    else if (keycode == KEY_DOWN)
         map_info->controls->x_angle += 5;
-    else if (keycode == 122 && map_info->controls->z_angle > -43)
+    else if (keycode == 122)
         map_info->controls->z_angle -= 5;
-    else if (keycode == 120 && map_info->controls->z_angle < 43)
+    else if (keycode == 120)
         map_info->controls->z_angle += 5;
     mlx_clear_window(MLX, WIN);
     expose_hook(map_info);
