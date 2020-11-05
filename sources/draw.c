@@ -21,10 +21,10 @@ static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 	SY = (END_Y >= START_Y) ? 1 : -1;
 	X = START_X;
 	Y = START_Y;
-	ERR = (DX > DY) ? 2 * DY - DX : 2 * DX -  DY;
+	ERR = (DX > DY) ? 2 * DY - DX : 2 * DX - DY;
 }
 
-static void    vertical(t_map *map_info, t_pixel *start, t_pixel *end)
+static void	vertical(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	int i;
 
@@ -32,9 +32,9 @@ static void    vertical(t_map *map_info, t_pixel *start, t_pixel *end)
 	while (i++ <= DY)
 	{
 		mlx_pixel_put(MLX, WIN, X, Y, \
-		get_color(map_info, start, end));
+				get_color(map_info, start, end));
 		if (ERR > 0)
-		{	
+		{
 			X += SX;
 			ERR = ERR + 2 * (DX - DY);
 		}
@@ -44,7 +44,7 @@ static void    vertical(t_map *map_info, t_pixel *start, t_pixel *end)
 	}
 }
 
-static void    horizontal(t_map *map_info, t_pixel *start, t_pixel *end)
+static void	horizontal(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	int i;
 
@@ -52,9 +52,9 @@ static void    horizontal(t_map *map_info, t_pixel *start, t_pixel *end)
 	while (i++ <= DX)
 	{
 		mlx_pixel_put(MLX, WIN, X, Y, \
-		get_color(map_info, start, end));
+				get_color(map_info, start, end));
 		if (ERR > 0)
-		{	
+		{
 			Y += SY;
 			ERR = ERR + 2 * (DY - DX);
 		}
@@ -64,7 +64,7 @@ static void    horizontal(t_map *map_info, t_pixel *start, t_pixel *end)
 	}
 }
 
-static void draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
+static void	draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	get_args(map_info, start, end);
 	if (DX > DY)
@@ -73,9 +73,9 @@ static void draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 		vertical(map_info, start, end);
 }
 
-void    draw_map(t_map *map_info)
+void		draw_map(t_map *map_info)
 {
-    int	x;
+	int	x;
 	int	y;
 
 	y = 0;

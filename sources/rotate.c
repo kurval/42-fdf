@@ -41,9 +41,9 @@ static void	rot_z(t_pixel *pixel, double ang)
 	pixel->ry = x * sin(ang) + y * cos(ang);
 }
 
-void	rotate(t_map *map_info)
+void		rotate(t_map *map_info)
 {
-    int	x;
+	int	x;
 	int	y;
 
 	y = 0;
@@ -52,17 +52,17 @@ void	rotate(t_map *map_info)
 		x = 0;
 		while (x < MAP_WIDTH)
 		{
-            RX = PIX_X;
-            RY = PIX_Y;
-            RZ = PIX_Z;
-            RX *= ZOOM;
-            RY *= ZOOM;
-            RZ *= ZOOM / ZMOD;
-            RX -= (MAP_WIDTH * ZOOM) / 2;
-            RY -= (MAP_HEIGHT * ZOOM) / 2;
-            rot_x(PIX, radian_ang(X_ANGLE));
-            rot_y(PIX, radian_ang(Y_ANGLE));
-            rot_z(PIX, radian_ang(Z_ANGLE));
+			RX = PIX_X;
+			RY = PIX_Y;
+			RZ = PIX_Z;
+			RX *= ZOOM;
+			RY *= ZOOM;
+			RZ *= ZOOM / ZMOD;
+			RX -= (MAP_WIDTH * ZOOM) / 2;
+			RY -= (MAP_HEIGHT * ZOOM) / 2;
+			rot_x(PIX, radian_ang(X_ANGLE));
+			rot_y(PIX, radian_ang(Y_ANGLE));
+			rot_z(PIX, radian_ang(Z_ANGLE));
 			x++;
 		}
 		y++;

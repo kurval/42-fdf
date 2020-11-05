@@ -34,7 +34,8 @@ static void	store_values(char **values, t_map *map_info, int y)
 
 	x = 0;
 	width = check_width(map_info, values, y);
-	if (!(map_info->pixels[y] = (t_pixel **)malloc(sizeof(t_pixel *) * width + 1)))
+	if (!(map_info->pixels[y] = \
+	(t_pixel **)malloc(sizeof(t_pixel *) * width + 1)))
 		print_error(MALLOC_ERROR);
 	while (values[x] != NULL)
 	{
@@ -75,10 +76,10 @@ static void	save_lines(int fd, t_map *map_info, char *file1)
 	map_info->pixels[line_num] = NULL;
 	free(line);
 	if (ret == -1)
-        print_error(GNL_ERROR);
+		print_error(GNL_ERROR);
 }
 
-static void count_height(int fd, t_map *map_info)
+static void	count_height(int fd, t_map *map_info)
 {
 	int		ret;
 	char	*line;
@@ -92,24 +93,25 @@ static void count_height(int fd, t_map *map_info)
 	}
 	free(line);
 	if (ret == -1)
-        print_error(GNL_ERROR);
+		print_error(GNL_ERROR);
 }
 
-void    read_input(int args, char **argv, t_map *map_info)
+void		read_input(int args, char **argv, t_map *map_info)
 {
 	int fd;
-	
+
 	fd = 0;
-    if (args == 2)
+	if (args == 2)
 	{
 		if ((fd = open(argv[1], O_RDONLY)) == -1)
-		    print_error(OPEN_ERROR);
+			print_error(OPEN_ERROR);
 		count_height(fd, map_info);
 		close(fd);
 	}
-    else
-        print_error(USAGE);
-	if (!(map_info->pixels = (t_pixel ***)malloc(sizeof(t_pixel **) * map_info->height + 1)))
+	else
+		print_error(USAGE);
+	if (!(map_info->pixels = (t_pixel ***)malloc(sizeof(t_pixel **)\
+	* map_info->height + 1)))
 		print_error(MALLOC_ERROR);
 	save_lines(fd, map_info, argv[1]);
 }

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 10:44:00 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 11:26:19 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,11 +123,11 @@ typedef struct		s_ctrl
 
 typedef struct		s_map
 {
-	t_pixel         ***pixels;
+	t_pixel			***pixels;
 	t_ctrl			*controls;
 	int				pro;
-    int             height;
-    int             width;
+	int				height;
+	int				width;
 	void			*mlx;
 	void			*win;
 	int				dx;
@@ -139,23 +139,23 @@ typedef struct		s_map
 	int				err;
 }					t_map;
 
-int     main(int args, char **argv);
-void    read_input(int args, char **argv, t_map *map_info);
-void    init_map_info(t_map *info);
-t_ctrl  *init_controls(void);
-void    print_error(char *error_msg);
-void	free_all(t_map *map_info);
-int		press_key(int keycode, t_map *map_info);
-int		expose_hook(t_map *map_info);
-void    draw_map(t_map *map_info);
-void    reset_controls(t_map *info);
-int 	get_color(t_map *map_info, t_pixel *start, t_pixel *end);
-int    	set_color(t_map *map_info, int z);
-int    	press_mouse(int button, int x, int y, t_map *map_info);
-void	rotate(t_map *map_info);
-double	radian_ang(int angle);
-void	projections(t_map *map_info);
-void	print_points(t_map *map_info);
-void    draw_legend(t_map *map_info);
+int					main(int args, char **argv);
+void				read_input(int args, char **argv, t_map *map_info);
+void				init_map_info(t_map *info);
+t_ctrl				*init_controls(void);
+void				print_error(char *error_msg);
+void				free_all(t_map *map_info);
+int					press_key(int keycode, t_map *map_info);
+int					expose_hook(t_map *map_info);
+void				draw_map(t_map *map_info);
+void				reset_controls(t_map *info);
+int					get_color(t_map *map_info, t_pixel *start, t_pixel *end);
+int					set_color(t_map *map_info, int z);
+int					press_mouse(int button, int x, int y, t_map *map_info);
+void				rotate(t_map *map_info);
+double				radian_ang(int angle);
+void				projections(t_map *map_info);
+void				print_points(t_map *map_info);
+void				draw_legend(t_map *map_info);
 
 #endif
