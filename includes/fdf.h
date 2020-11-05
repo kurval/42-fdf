@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 10:09:58 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 10:44:00 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 **	COLORS
 */
 
+# define TEXT		0xff00ff
 # define WHITE		0xffffff
 # define TOP		0x0000ff
 # define HIGHMID	0x0080ff
@@ -61,17 +62,18 @@
 # define PIX_X		map_info->pixels[y][x]->px
 # define PIX_Y		map_info->pixels[y][x]->py
 # define PIX_Z		map_info->pixels[y][x]->pz
-# define PIX_IX		pixel->ix
-# define PIX_IY		pixel->iy
 # define RY			map_info->pixels[y][x]->ry
 # define RX			map_info->pixels[y][x]->rx
 # define RZ			map_info->pixels[y][x]->rz
 # define COLOR		map_info->pixels[y][x]->color
 
+# define PIX_IX		pixel->ix
+# define PIX_IY		pixel->iy
 # define START_X	start->ix
 # define START_Y	start->iy
 # define END_X		end->ix
 # define END_Y		end->iy
+
 # define ERR		map_info->err
 # define X			map_info->x
 # define Y			map_info->y
@@ -88,6 +90,9 @@
 # define ZMOD		map_info->controls->zmod
 # define SHIFT_X	map_info->controls->shift_x
 # define SHIFT_Y	map_info->controls->shift_y
+# define X_ANGLE	map_info->controls->x_angle
+# define Y_ANGLE	map_info->controls->y_angle
+# define Z_ANGLE	map_info->controls->z_angle
 # define ISO		1
 # define CONIC		2
 
@@ -151,5 +156,6 @@ void	rotate(t_map *map_info);
 double	radian_ang(int angle);
 void	projections(t_map *map_info);
 void	print_points(t_map *map_info);
+void    draw_legend(t_map *map_info);
 
 #endif

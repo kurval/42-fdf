@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/04 20:20:24 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 10:41:01 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void    draw_map(t_map *map_info)
 	int	y;
 
 	y = 0;
+	draw_legend(map_info);
 	while (y < MAP_HEIGHT)
 	{
 		x = 0;

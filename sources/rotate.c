@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:46:15 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 08:38:45 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 10:30:41 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ static void	rot_z(t_pixel *pixel, double ang)
 	pixel->ry = x * sin(ang) + y * cos(ang);
 }
 
-
 void	rotate(t_map *map_info)
 {
     int	x;
@@ -61,9 +60,9 @@ void	rotate(t_map *map_info)
             RZ *= ZOOM / ZMOD;
             RX -= (MAP_WIDTH * ZOOM) / 2;
             RY -= (MAP_HEIGHT * ZOOM) / 2;
-            rot_x(PIX, radian_ang(map_info->controls->x_angle));
-            rot_y(PIX, radian_ang(map_info->controls->y_angle));
-            rot_z(PIX, radian_ang(map_info->controls->z_angle));
+            rot_x(PIX, radian_ang(X_ANGLE));
+            rot_y(PIX, radian_ang(Y_ANGLE));
+            rot_z(PIX, radian_ang(Z_ANGLE));
 			x++;
 		}
 		y++;
