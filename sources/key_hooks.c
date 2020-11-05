@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 17:53:25 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 18:28:29 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 22:42:45 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	set_projections(int keycode, t_map *map_info)
 	if (keycode == 49)
 		map_info->pro = ISO;
 	else if (keycode == 50)
-		map_info->pro = DIMETRIC;	
+		map_info->pro = DIMETRIC;
 	else if (keycode == 51)
 		map_info->pro = CONIC;
 	mlx_clear_window(MLX, WIN);
@@ -56,10 +56,6 @@ static void	set_angle(int keycode, t_map *map_info)
 		map_info->controls->x_angle -= 5;
 	else if (keycode == KEY_DOWN)
 		map_info->controls->x_angle += 5;
-	else if (keycode == 122)
-		map_info->controls->z_angle -= 5;
-	else if (keycode == 120)
-		map_info->controls->z_angle += 5;
 	mlx_clear_window(MLX, WIN);
 	expose_hook(map_info);
 }

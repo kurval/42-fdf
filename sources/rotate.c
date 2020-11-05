@@ -6,39 +6,39 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:46:15 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 10:30:41 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 22:41:03 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-static void	rot_x(t_pixel *pixel, double ang)
+static void	rot_x(t_pixel *point, double ang)
 {
 	int	y;
 
-	y = pixel->ry;
-	pixel->ry = y * cos(ang) + pixel->rz * sin(ang);
-	pixel->rz = -y * sin(ang) + pixel->rz * cos(ang);
+	y = point->ry;
+	point->ry = y * cos(ang) + point->rz * sin(ang);
+	point->rz = -y * sin(ang) + point->rz * cos(ang);
 }
 
-static void	rot_y(t_pixel *pixel, double ang)
+static void	rot_y(t_pixel *point, double ang)
 {
 	int	x;
 
-	x = pixel->rx;
-	pixel->rx = x * cos(ang) + pixel->rz * sin(ang);
-	pixel->rz = -x * sin(ang) + pixel->rz * cos(ang);
+	x = point->rx;
+	point->rx = x * cos(ang) + point->rz * sin(ang);
+	point->rz = -x * sin(ang) + point->rz * cos(ang);
 }
 
-static void	rot_z(t_pixel *pixel, double ang)
+static void	rot_z(t_pixel *point, double ang)
 {
 	int	x;
 	int	y;
 
-	x = pixel->rx;
-	y = pixel->ry;
-	pixel->rx = x * cos(ang) - y * sin(ang);
-	pixel->ry = x * sin(ang) + y * cos(ang);
+	x = point->rx;
+	y = point->ry;
+	point->rx = x * cos(ang) - y * sin(ang);
+	point->ry = x * sin(ang) + y * cos(ang);
 }
 
 void		rotate(t_map *map_info)
@@ -52,17 +52,17 @@ void		rotate(t_map *map_info)
 		x = 0;
 		while (x < MAP_WIDTH)
 		{
-			RX = PIX_X;
-			RY = PIX_Y;
-			RZ = PIX_Z;
+			RX = POINT_X;
+			RY = POINT_Y;
+			RZ = POINT_Z;
 			RX *= ZOOM;
 			RY *= ZOOM;
 			RZ *= ZOOM / ZMOD;
 			RX -= (MAP_WIDTH * ZOOM) / 2;
 			RY -= (MAP_HEIGHT * ZOOM) / 2;
-			rot_x(PIX, radian_ang(X_ANGLE));
-			rot_y(PIX, radian_ang(Y_ANGLE));
-			rot_z(PIX, radian_ang(Z_ANGLE));
+			rot_x(POINT, radian_ang(X_ANGLE));
+			rot_y(POINT, radian_ang(Y_ANGLE));
+			rot_z(POINT, radian_ang(Z_ANGLE));
 			x++;
 		}
 		y++;

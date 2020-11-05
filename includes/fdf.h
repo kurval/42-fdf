@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 18:28:43 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 22:41:25 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,17 @@
 # define MAP_HEIGHT	map_info->height
 # define MAP_WIDTH	map_info->width
 
-# define PIX		map_info->pixels[y][x]
-# define PIX_X		map_info->pixels[y][x]->px
-# define PIX_Y		map_info->pixels[y][x]->py
-# define PIX_Z		map_info->pixels[y][x]->pz
-# define RY			map_info->pixels[y][x]->ry
-# define RX			map_info->pixels[y][x]->rx
-# define RZ			map_info->pixels[y][x]->rz
-# define COLOR		map_info->pixels[y][x]->color
+# define POINT		map_info->points[y][x]
+# define POINT_X	map_info->points[y][x]->px
+# define POINT_Y	map_info->points[y][x]->py
+# define POINT_Z	map_info->points[y][x]->pz
+# define RY			map_info->points[y][x]->ry
+# define RX			map_info->points[y][x]->rx
+# define RZ			map_info->points[y][x]->rz
+# define COLOR		map_info->points[y][x]->color
 
-# define PIX_IX		pixel->ix
-# define PIX_IY		pixel->iy
+# define POINT_IX		point->ix
+# define POINT_IY		point->iy
 # define START_X	start->ix
 # define START_Y	start->iy
 # define END_X		end->ix
@@ -124,7 +124,7 @@ typedef struct		s_ctrl
 
 typedef struct		s_map
 {
-	t_pixel			***pixels;
+	t_pixel			***points;
 	t_ctrl			*controls;
 	int				pro;
 	int				height;

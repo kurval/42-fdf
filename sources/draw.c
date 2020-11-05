@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 10:41:01 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 22:40:53 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ void		draw_map(t_map *map_info)
 		while (x < MAP_WIDTH)
 		{
 			if (x < MAP_WIDTH - 1)
-				draw_line(map_info, PIX, map_info->pixels[y][x + 1]);
+				draw_line(map_info, POINT, map_info->points[y][x + 1]);
 			if (y < MAP_HEIGHT - 1)
-				draw_line(map_info, PIX, map_info->pixels[y + 1][x]);
+				draw_line(map_info, POINT, map_info->points[y + 1][x]);
 			x++;
 		}
 		y++;

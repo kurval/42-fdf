@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:35:43 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 10:09:46 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 22:40:53 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ static void	free_map(t_map *map_info)
 	int x;
 
 	y = 0;
-	while (map_info->pixels[y])
+	while (map_info->points[y])
 	{
 		x = 0;
-		while (PIX)
+		while (POINT)
 		{
-			free(PIX);
+			free(POINT);
 			x++;
 		}
-		free(map_info->pixels[y]);
+		free(map_info->points[y]);
 		y++;
 	}
-	free(map_info->pixels);
+	free(map_info->points);
 }
 
 void		free_all(t_map *map_info)
@@ -55,12 +55,12 @@ void		print_points(t_map *map_info)
 	int x;
 
 	i = 0;
-	while (map_info->pixels[i])
+	while (map_info->points[i])
 	{
 		x = 0;
-		while (map_info->pixels[i][x])
+		while (map_info->points[i][x])
 		{
-			ft_printf("%d ", map_info->pixels[i][x]->pz);
+			ft_printf("%d ", map_info->points[i][x]->pz);
 			x++;
 		}
 		i++;

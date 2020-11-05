@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 10:09:30 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 22:41:03 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,23 @@ static void	store_values(char **values, t_map *map_info, int y)
 
 	x = 0;
 	width = check_width(map_info, values, y);
-	if (!(map_info->pixels[y] = \
+	if (!(map_info->points[y] = \
 	(t_pixel **)malloc(sizeof(t_pixel *) * width + 1)))
 		print_error(MALLOC_ERROR);
 	while (values[x] != NULL)
 	{
-		if (!(PIX = (t_pixel *)malloc(sizeof(t_pixel))))
+		if (!(POINT = (t_pixel *)malloc(sizeof(t_pixel))))
 			print_error(MALLOC_ERROR);
-		PIX_X = x;
-		PIX_Y = y;
+		POINT_X = x;
+		POINT_Y = y;
 		if (!(ft_atoi_err(values[x])))
 			print_error(MAP_ERROR);
-		PIX_Z = ft_atoi(values[x]);
+		POINT_Z = ft_atoi(values[x]);
 		free(values[x]);
 		x++;
 	}
 	free(values);
-	PIX = NULL;
+	POINT = NULL;
 }
 
 static void	save_lines(int fd, t_map *map_info, char *file1)
@@ -73,7 +73,7 @@ static void	save_lines(int fd, t_map *map_info, char *file1)
 		line_num++;
 	}
 	close(fd);
-	map_info->pixels[line_num] = NULL;
+	map_info->points[line_num] = NULL;
 	free(line);
 	if (ret == -1)
 		print_error(GNL_ERROR);
@@ -110,7 +110,7 @@ void		read_input(int args, char **argv, t_map *map_info)
 	}
 	else
 		print_error(USAGE);
-	if (!(map_info->pixels = (t_pixel ***)malloc(sizeof(t_pixel **)\
+	if (!(map_info->points = (t_pixel ***)malloc(sizeof(t_pixel **)\
 	* map_info->height + 1)))
 		print_error(MALLOC_ERROR);
 	save_lines(fd, map_info, argv[1]);
