@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 10:32:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 10:46:52 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 18:29:25 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	draw_legend(t_map *map_info)
 	mlx_string_put(MLX, WIN, 15, y += 25, TEXT, "Altitude: 'A' and 'S' Keys");
 	mlx_string_put(MLX, WIN, 15, y += 25, TEXT, "Rotate: Arrow Keys");
 	mlx_string_put(MLX, WIN, 15, y += 25, TEXT,\
-	"Projections: 1 = ISO 2 = CONIC");
+	"Projections: 1 = ISO 2 = DIMETRIC 3 = CONIC");
 }

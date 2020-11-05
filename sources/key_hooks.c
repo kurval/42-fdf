@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 17:53:25 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 09:51:11 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 18:28:29 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ static void	set_projections(int keycode, t_map *map_info)
 	if (keycode == 49)
 		map_info->pro = ISO;
 	else if (keycode == 50)
+		map_info->pro = DIMETRIC;	
+	else if (keycode == 51)
 		map_info->pro = CONIC;
 	mlx_clear_window(MLX, WIN);
 	expose_hook(map_info);
@@ -66,7 +68,7 @@ int			press_key(int keycode, t_map *map_info)
 {
 	if (keycode == ESC)
 		exit(0);
-	else if (keycode >= 49 && keycode <= 50)
+	else if (keycode >= 49 && keycode <= 51)
 		set_projections(keycode, map_info);
 	else if (keycode == 97 || keycode == 115)
 		set_altitude(keycode, map_info);

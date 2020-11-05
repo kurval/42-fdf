@@ -6,22 +6,24 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:08:49 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 10:06:13 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 18:31:49 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-static void	isometric(t_map *map_info, t_pixel *pixel)
+static void	metric(t_map *map_info, t_pixel *pixel)
 {
 	int previous_x;
 	int previous_y;
+	double rad;
 
+	rad = (map_info->pro == ISO) ? radian_ang(30) : radian_ang(15);
 	previous_x = pixel->rx;
 	previous_y = pixel->ry;
-	PIX_IX = SHIFT_X + (previous_x - previous_y) * cos(radian_ang(30));
+	PIX_IX = SHIFT_X + (previous_x - previous_y) * cos(rad);
 	PIX_IY = SHIFT_Y + (-pixel->rz +\
-	(previous_x + previous_y) * sin(radian_ang(30)));
+	(previous_x + previous_y) * sin(rad));
 	pixel->color = set_color(map_info, pixel->pz / ZMOD);
 }
 
@@ -48,8 +50,8 @@ void		projections(t_map *map_info)
 		x = 0;
 		while (x < MAP_WIDTH)
 		{
-			if (map_info->pro == ISO)
-				isometric(map_info, PIX);
+			if (map_info->pro == ISO || map_info->pro == DIMETRIC)
+				metric(map_info, PIX);
 			else if (map_info->pro == CONIC)
 				conic(map_info, PIX);
 			x++;

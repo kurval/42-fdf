@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 11:26:19 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/05 18:28:43 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@
 # define Y_ANGLE	map_info->controls->y_angle
 # define Z_ANGLE	map_info->controls->z_angle
 # define ISO		1
-# define CONIC		2
+# define DIMETRIC	2
+# define CONIC		3
 
 typedef struct		s_pixel
 {
