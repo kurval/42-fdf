@@ -31,6 +31,9 @@ Each number corresponds to a point in space:
 • The vertical position corresponds to its ordinate.  
 • The value corresponds to its altitude.  
 
+Which renders in Fdf:  
+![42](/images/42.png)
+
 ## Implementation  
 
 ### Drawing a line  
