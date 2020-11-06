@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 22:40:53 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/06 20:46:02 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 	ERR = (DX > DY) ? 2 * DY - DX : 2 * DX - DY;
 }
 
-static void	vertical(t_map *map_info, t_pixel *start, t_pixel *end)
+static void	draw_high(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	int i;
 
@@ -44,7 +44,7 @@ static void	vertical(t_map *map_info, t_pixel *start, t_pixel *end)
 	}
 }
 
-static void	horizontal(t_map *map_info, t_pixel *start, t_pixel *end)
+static void	draw_low(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	int i;
 
@@ -68,9 +68,9 @@ static void	draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	get_args(map_info, start, end);
 	if (DX > DY)
-		horizontal(map_info, start, end);
+		draw_low(map_info, start, end);
 	else
-		vertical(map_info, start, end);
+		draw_high(map_info, start, end);
 }
 
 void		draw_map(t_map *map_info)

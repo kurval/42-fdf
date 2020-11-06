@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 22:41:25 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/06 09:12:15 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@
 # define RZ			map_info->points[y][x]->rz
 # define COLOR		map_info->points[y][x]->color
 
-# define POINT_IX		point->ix
-# define POINT_IY		point->iy
+# define POINT_IX	point->ix
+# define POINT_IY	point->iy
 # define START_X	start->ix
 # define START_Y	start->iy
 # define END_X		end->ix

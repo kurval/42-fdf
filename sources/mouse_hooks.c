@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouse_controls.c                                   :+:      :+:    :+:   */
+/*   mouse_hooks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:39:59 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/01 15:38:16 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/06 18:55:20 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static void	set_zoom(int button, t_map *map_info)
 		map_info->controls->zoom += 1;
 	if (button == 5)
 		map_info->controls->zoom -= 1;
+	if(map_info->controls->zoom < 1)
+		map_info->controls->zoom = 1;
 	mlx_clear_window(MLX, WIN);
 	expose_hook(map_info);
 }
