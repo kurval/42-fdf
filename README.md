@@ -40,7 +40,7 @@ In our school we will need to do everything from scratch. In this case it meant 
 
 ### Colors  
 
-I used the folowing color scale according to altitude:  
+I used the following color scale according to altitude:  
 
 ![color_scale](/images/COLORS.png)
 
