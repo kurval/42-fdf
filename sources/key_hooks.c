@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 17:53:25 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/06 19:04:26 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:52:23 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ static void	set_angle(int keycode, t_map *map_info)
 int			press_key(int keycode, t_map *map_info)
 {
 	if (keycode == ESC)
+	{
+		free_all(map_info);
 		exit(0);
+	}
 	else if (keycode >= 49 && keycode <= 51)
 		set_projections(keycode, map_info);
 	else if (keycode == 97 || keycode == 115)
