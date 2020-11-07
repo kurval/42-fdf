@@ -6,12 +6,17 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:14:01 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 11:11:53 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:16:07 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
+
+/*
+** Setting color based on current altitude.
+** Deault color is white.
+*/
 
 int				set_color(t_map *map_info, int z)
 {
@@ -30,6 +35,10 @@ int				set_color(t_map *map_info, int z)
 	}
 }
 
+/*
+** Calculationg current position in percentages.
+*/
+
 static double	percent(int start, int end, int current)
 {
 	double placement;
@@ -44,6 +53,11 @@ static int		get_light(int start, int end, double percentage)
 {
 	return ((int)((1 - percentage) * start + percentage * end));
 }
+
+/*
+** Calculating color gradient between start
+** and end colors for creating fading effect.
+*/
 
 int				get_color(t_map *map_info, t_pixel *start, t_pixel *end)
 {

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:46:15 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 22:41:03 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:07:17 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ static void	rot_z(t_pixel *point, double ang)
 	point->rx = x * cos(ang) - y * sin(ang);
 	point->ry = x * sin(ang) + y * cos(ang);
 }
+
+/*
+** Using rotation matrix to get new coordinates
+** for each point. Centering RX and RY before
+** rotation.
+*/
 
 void		rotate(t_map *map_info)
 {

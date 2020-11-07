@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 12:10:30 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 10:05:22 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:19:39 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	expose_hook(t_map *map_info)
 {
+	draw_legend(map_info);
 	rotate(map_info);
 	projections(map_info);
 	draw_map(map_info);

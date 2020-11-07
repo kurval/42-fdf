@@ -6,12 +6,17 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/06 20:46:02 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:16:11 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../includes/error.h"
+
+/*
+** Initializing constants and starting point and
+** decision variable (ERR).
+*/
 
 static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 {
@@ -23,6 +28,11 @@ static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 	Y = START_Y;
 	ERR = (DX > DY) ? 2 * DY - DX : 2 * DX - DY;
 }
+
+/*
+** Same as draw_low() but y gets increased in
+** each iteration.
+*/
 
 static void	draw_high(t_map *map_info, t_pixel *start, t_pixel *end)
 {
@@ -44,6 +54,12 @@ static void	draw_high(t_map *map_info, t_pixel *start, t_pixel *end)
 	}
 }
 
+/*
+** Increases x in each iteration. Y gets only
+** increased if decision variable (ERR) is greater than zero.
+** In that case ERR variable gets readjust.
+*/
+
 static void	draw_low(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	int i;
@@ -64,6 +80,11 @@ static void	draw_low(t_map *map_info, t_pixel *start, t_pixel *end)
 	}
 }
 
+/*
+** Based on a slope we need to increase in each
+** iteration either x (draw low) or y (draw high).
+*/
+
 static void	draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 {
 	get_args(map_info, start, end);
@@ -73,13 +94,18 @@ static void	draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
 		draw_high(map_info, start, end);
 }
 
+/*
+** Based on map height and width we have connect
+** each endpoints and draw lines in vertical and
+** horizontal direction.
+*/
+
 void		draw_map(t_map *map_info)
 {
 	int	x;
 	int	y;
 
 	y = 0;
-	draw_legend(map_info);
 	while (y < MAP_HEIGHT)
 	{
 		x = 0;

@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 22:41:03 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:19:16 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,12 @@ static void	count_height(int fd, t_map *map_info)
 	if (ret == -1)
 		print_error(GNL_ERROR);
 }
+
+/*
+** Creating stuct matrix where
+** each line from input file is stored into
+** array of stucts (t_point).
+*/
 
 void		read_input(int args, char **argv, t_map *map_info)
 {

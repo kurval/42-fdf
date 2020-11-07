@@ -6,11 +6,15 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:35:43 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/05 22:40:53 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/07 11:57:55 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
+
+/*
+** Calculates radian angle from given angle.
+*/
 
 double		radian_ang(int angle)
 {
