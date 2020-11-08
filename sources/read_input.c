@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/07 12:19:16 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/08 18:22:09 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static void	count_height(int fd, t_map *map_info)
 }
 
 /*
-** Creating stuct matrix where
+** Creating struct matrix where
 ** each line from input file is stored into
 ** array of stucts (t_point).
 */
