@@ -6,12 +6,12 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:31:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/08 17:12:00 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:46:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-#include "../includes/error.h"
+#include "fdf.h"
+#include "error.h"
 
 void	init_map_info(t_map *info)
 {

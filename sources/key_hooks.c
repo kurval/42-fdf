@@ -6,12 +6,12 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 17:53:25 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/08 17:10:37 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:46:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-#include "../includes/error.h"
+#include "fdf.h"
+#include "error.h"
 
 static void	set_altitude(int keycode, t_map *map_info)
 {

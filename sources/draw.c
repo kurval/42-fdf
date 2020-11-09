@@ -6,19 +6,19 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:37:20 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/07 12:16:11 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:57:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-#include "../includes/error.h"
+#include "fdf.h"
+#include "error.h"
 
 /*
 ** Initializing constants and starting point and
 ** decision variable (ERR).
 */
 
-static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
+static void	get_args(t_map *map_info, t_point *start, t_point *end)
 {
 	DX = ft_abs(END_X - START_X);
 	DY = ft_abs(END_Y - START_Y);
@@ -34,7 +34,7 @@ static void	get_args(t_map *map_info, t_pixel *start, t_pixel *end)
 ** each iteration.
 */
 
-static void	draw_high(t_map *map_info, t_pixel *start, t_pixel *end)
+static void	draw_high(t_map *map_info, t_point *start, t_point *end)
 {
 	int i;
 
@@ -60,7 +60,7 @@ static void	draw_high(t_map *map_info, t_pixel *start, t_pixel *end)
 ** In that case ERR variable gets readjust.
 */
 
-static void	draw_low(t_map *map_info, t_pixel *start, t_pixel *end)
+static void	draw_low(t_map *map_info, t_point *start, t_point *end)
 {
 	int i;
 
@@ -85,7 +85,7 @@ static void	draw_low(t_map *map_info, t_pixel *start, t_pixel *end)
 ** iteration either x (draw low) or y (draw high).
 */
 
-static void	draw_line(t_map *map_info, t_pixel *start, t_pixel *end)
+static void	draw_line(t_map *map_info, t_point *start, t_point *end)
 {
 	get_args(map_info, start, end);
 	if (DX > DY)

@@ -6,12 +6,12 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:39:59 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/07 12:20:14 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:46:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-#include "../includes/error.h"
+#include "fdf.h"
+#include "error.h"
 
 static void	set_zoom(int button, t_map *map_info)
 {

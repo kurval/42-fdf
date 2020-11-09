@@ -6,13 +6,13 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:08:49 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/07 11:59:13 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:57:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
-static void	metric(t_map *map_info, t_pixel *point)
+static void	metric(t_map *map_info, t_point *point)
 {
 	int		previous_x;
 	int		previous_y;
@@ -27,7 +27,7 @@ static void	metric(t_map *map_info, t_pixel *point)
 	point->color = set_color(map_info, point->pz / ZMOD);
 }
 
-static void	conic(t_map *map_info, t_pixel *point)
+static void	conic(t_map *map_info, t_point *point)
 {
 	int previous_x;
 	int previous_y;

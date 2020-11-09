@@ -6,12 +6,12 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:19:28 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/08 18:22:09 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:57:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-#include "../includes/error.h"
+#include "fdf.h"
+#include "error.h"
 
 static int	check_width(t_map *map_info, char **values, int line_num)
 {
@@ -35,11 +35,11 @@ static void	store_values(char **values, t_map *map_info, int y)
 	x = 0;
 	width = check_width(map_info, values, y);
 	if (!(map_info->points[y] = \
-	(t_pixel **)malloc(sizeof(t_pixel *) * width + 1)))
+	(t_point **)malloc(sizeof(t_point *) * width + 1)))
 		print_error(MALLOC_ERROR);
 	while (values[x] != NULL)
 	{
-		if (!(POINT = (t_pixel *)malloc(sizeof(t_pixel))))
+		if (!(POINT = (t_point *)malloc(sizeof(t_point))))
 			print_error(MALLOC_ERROR);
 		POINT_X = x;
 		POINT_Y = y;
@@ -116,7 +116,7 @@ void		read_input(int args, char **argv, t_map *map_info)
 	}
 	else
 		print_error(USAGE);
-	if (!(map_info->points = (t_pixel ***)malloc(sizeof(t_pixel **)\
+	if (!(map_info->points = (t_point ***)malloc(sizeof(t_point **)\
 	* map_info->height + 1)))
 		print_error(MALLOC_ERROR);
 	save_lines(fd, map_info, argv[1]);

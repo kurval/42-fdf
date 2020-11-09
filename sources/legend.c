@@ -6,11 +6,11 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 10:32:07 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/06 08:54:36 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:46:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 void	draw_legend(t_map *map_info)
 {

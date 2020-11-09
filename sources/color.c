@@ -6,12 +6,12 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:14:01 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/07 12:16:07 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:57:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-#include "../includes/error.h"
+#include "fdf.h"
+#include "error.h"
 
 /*
 ** Setting color based on current altitude.
@@ -59,7 +59,7 @@ static int		get_light(int start, int end, double percentage)
 ** and end colors for creating fading effect.
 */
 
-int				get_color(t_map *map_info, t_pixel *start, t_pixel *end)
+int				get_color(t_map *map_info, t_point *start, t_point *end)
 {
 	int		r;
 	int		g;

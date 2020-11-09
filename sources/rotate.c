@@ -6,13 +6,13 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 13:46:15 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/07 12:07:17 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:57:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
-static void	rot_x(t_pixel *point, double ang)
+static void	rot_x(t_point *point, double ang)
 {
 	int	y;
 
@@ -21,7 +21,7 @@ static void	rot_x(t_pixel *point, double ang)
 	point->rz = -y * sin(ang) + point->rz * cos(ang);
 }
 
-static void	rot_y(t_pixel *point, double ang)
+static void	rot_y(t_point *point, double ang)
 {
 	int	x;
 
@@ -30,7 +30,7 @@ static void	rot_y(t_pixel *point, double ang)
 	point->rz = -x * sin(ang) + point->rz * cos(ang);
 }
 
-static void	rot_z(t_pixel *point, double ang)
+static void	rot_z(t_point *point, double ang)
 {
 	int	x;
 	int	y;

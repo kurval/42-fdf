@@ -9,9 +9,9 @@ OBJECTS = $(subst .c,.o,$(SOURCES))
 
 LIBFT = libft/libft.a
 
-HEADERS = fdf.h
+HEADERS = includes
 
-FLAGS = -Wall -Wextra #-Werror
+FLAGS = -Wall -Wextra -Werror
 
 LINKS = -L /usr/local/lib -lmlx -I /usr/local/X11/include \
 	-L /usr/X11/lib -lX11 -lXext -framework OpenGL -framework Appkit

@@ -6,11 +6,11 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 12:10:30 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/07 12:49:45 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:56:26 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 int	expose_hook(t_map *map_info)
 {

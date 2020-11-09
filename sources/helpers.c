@@ -6,11 +6,11 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 10:35:43 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/07 12:31:41 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:46:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 /*
 ** Calculates radian angle from given angle.

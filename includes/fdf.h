@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/06 09:12:15 by vkurkela         ###   ########.fr       */
+/*   Updated: 2020/11/09 16:57:36 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@
 # define DIMETRIC	2
 # define CONIC		3
 
-typedef struct		s_pixel
+typedef struct		s_point
 {
 	int				px;
 	int				py;
@@ -108,7 +108,7 @@ typedef struct		s_pixel
 	double			ry;
 	double			rx;
 	double			rz;
-}					t_pixel;
+}					t_point;
 
 typedef struct		s_ctrl
 {
@@ -124,7 +124,7 @@ typedef struct		s_ctrl
 
 typedef struct		s_map
 {
-	t_pixel			***points;
+	t_point			***points;
 	t_ctrl			*controls;
 	int				pro;
 	int				height;
@@ -150,7 +150,7 @@ int					press_key(int keycode, t_map *map_info);
 int					expose_hook(t_map *map_info);
 void				draw_map(t_map *map_info);
 void				reset_controls(t_map *info);
-int					get_color(t_map *map_info, t_pixel *start, t_pixel *end);
+int					get_color(t_map *map_info, t_point *start, t_point *end);
 int					set_color(t_map *map_info, int z);
 int					press_mouse(int button, int x, int y, t_map *map_info);
 void				rotate(t_map *map_info);
