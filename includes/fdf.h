@@ -6,7 +6,7 @@
 /*   By: vkurkela <vkurkela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 11:39:46 by vkurkela          #+#    #+#             */
-/*   Updated: 2020/11/09 16:57:36 by vkurkela         ###   ########.fr       */
+/*   Updated: 2021/04/10 13:09:38 by vkurkela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@
 
 # define TEXT		0xff00ff
 # define WHITE		0xffffff
-# define TOP		0x0000ff
-# define HIGHMID	0x0080ff
-# define HIGH	 	0x00ffff
+# define BOTTOM		0x0000ff
+# define LOWMID		0x0080ff
+# define LOW	 	0x00ffff
 # define GROUND		0x40ff00
-# define LOW	 	0xffff00
-# define LOWMID	 	0xff8000
-# define BOTTOM	 	0xff0000
+# define HIGH	 	0xffff00
+# define HIGHMID	 	0xff8000
+# define TOP 	0xff0000
 
 /*
 **	MAP MACROS

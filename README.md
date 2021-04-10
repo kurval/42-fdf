@@ -41,12 +41,6 @@ Which renders in Fdf:
 In our school we will need to do everything from scratch. In this case it meant that we weren't given any line drawing function so we had to figure ourselves how to color pixels beetween line endpoints with help of [miniLibX library](https://qst0.github.io/ft_libgfx/man_mlx.html
 ). I used [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm) for drawing a line which was the most obvious choice.
 
-### Colors  
-
-I used the following color scale according to altitude:  
-
-![color_scale](/images/COLORS.png)
-
 ### Projections  
 
 In this project we must have 2 type of projection but we were free to choose the type of projection:
@@ -65,7 +59,7 @@ I have the following controls to help user to view different maps:
 • Change color mode (default white): 'C' key  
 • Reset map values: 'D' key  
 
-![preview_japan](/images/japan_iso.png)  
+![preview_japan](/images/japan.png)  
 *Isometric projection of Japan*
 
 Using graphic library: miniLibX  
